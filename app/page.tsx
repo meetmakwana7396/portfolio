@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { stackData } from "./stack-data";
 
+export const metadata = {
+  title: "Meet Makwana",
+  description: "Meet Makwana is a full-stack developer.",
+};
+
 export default function Home() {
   return (
     <>

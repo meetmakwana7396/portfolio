@@ -4,7 +4,7 @@ import Navlink from "./navlink";
 
 const Header = () => {
   return (
-    <div className="flex py-10 justify-between">
+    <div className="flex py-10 justify-between sticky top-0 bg-black">
       <Link href="/" className="text-2xl">
         <i>m</i>
         <sup className="ml-1">2</sup>
