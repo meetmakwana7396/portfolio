@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(chivo.className)}>
-        <div className="container relative px-6 overflow-hidden">{children}</div>
+        <div className="relative overflow-hidden">{children}</div>
       </body>
     </html>
   );

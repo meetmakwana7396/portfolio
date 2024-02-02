@@ -2,9 +2,10 @@ import Header from "@/components/header";
 import StackCard from "@/components/stack-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { stackData } from "./stack-data";
-import HeroAnimation from "@/components/hero-animation";
+import { stackData } from "@/app/data/stack-data";
 import HeroSvg from "@/components/icons/hero";
+import Image from "next/image";
+import { socialData } from "./data/social-data";
 
 export const metadata = {
   title: "Meet Makwana",
@@ -13,9 +14,9 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="container">
       <Header />
-      <div className="space-y-24 md:pb-40">
+      <div className="space-y-32">
         <section className="mt-32" id="hii">
           <div className="flex justify-between">
             <div className="flex flex-col justify-start items-center md:items-start text-center md:text-left">
@@ -38,7 +39,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="absolute -right-[300px]">
+            <div className="absolute -right-[150px]">
               <HeroSvg className="-scale-x-100" />
             </div>
           </div>
@@ -67,7 +68,28 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Get in touch section  */}
+        <section className="h-72 flex justify-center items-center">
+          <div className="flex gap-x-4 items-center">
+            {socialData.map((social) => (
+              <Link
+                href={social.url}
+                target="_blank"
+                className="hover:bg-green-500/10"
+                key={social.url}
+              >
+                <Image
+                  src={social.imageURL}
+                  height={32}
+                  width={32}
+                  alt={social.url}
+                />
+              </Link>
+            ))}
+          </div>
+        </section>
       </div>
-    </>
+    </div>
   );
 }

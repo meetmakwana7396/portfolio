@@ -47,7 +47,7 @@ export const stackData = [
     title: "Radix UI",
     description:
       "An open source component library optimized for fast development, easy maintenance, and accessibility. Just import and go—no configuration required.",
-    link: "https://tailwindcss.com/",
+    link: "https://www.radix-ui.com/",
   },
   {
     imageURL: "/tech-stack/node.svg",

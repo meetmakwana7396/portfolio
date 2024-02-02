@@ -20,6 +20,7 @@ const config = {
     extend: {
       container: {
         center: true,
+        padding: "0px 24px",
       },
       colors: {
         border: "hsl(var(--border))",
