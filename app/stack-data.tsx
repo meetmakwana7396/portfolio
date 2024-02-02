@@ -14,12 +14,27 @@ export const stackData = [
     link: "https://reactjs.org/",
   },
   {
+    imageURL: "/tech-stack/javascript.svg",
+    title: "JavaScript",
+    description:
+      "High-level, interpreted programming language widely used for building dynamic web applications, known for its versatility and broad community support.",
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
     imageURL: "/tech-stack/typescript.svg",
     title: "TypeScript",
     description:
       "Typed superset of JavaScript that adds static types, improving code maintainability, scalability, and catching potential errors early in the development process.",
     link: "https://www.typescriptlang.org/",
   },
+  {
+    imageURL: "/tech-stack/redux.svg",
+    title: "Redux",
+    description:
+      "Predictable state container for JavaScript apps, enhancing the manageability of state in complex applications and enabling a more efficient and maintainable data flow.",
+    link: "https://redux-toolkit.js.org/",
+  },
+
   {
     imageURL: "/tech-stack/tailwind.svg",
     title: "Tailwind CSS",
@@ -28,13 +43,12 @@ export const stackData = [
     link: "https://tailwindcss.com/",
   },
   {
-    imageURL: "/tech-stack/javascript.svg",
-    title: "JavaScript",
+    imageURL: "/tech-stack/radix.svg",
+    title: "Radix UI",
     description:
-      "High-level, interpreted programming language widely used for building dynamic web applications, known for its versatility and broad community support.",
-    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "An open source component library optimized for fast development, easy maintenance, and accessibility. Just import and go—no configuration required.",
+    link: "https://tailwindcss.com/",
   },
-
   {
     imageURL: "/tech-stack/node.svg",
     title: "Node.js",

@@ -3,6 +3,8 @@ import StackCard from "@/components/stack-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { stackData } from "./stack-data";
+import HeroAnimation from "@/components/hero-animation";
+import HeroSvg from "@/components/icons/hero";
 
 export const metadata = {
   title: "Meet Makwana",
@@ -15,24 +17,29 @@ export default function Home() {
       <Header />
       <div className="space-y-24 md:pb-40">
         <section className="mt-32" id="hii">
-          <div className="flex flex-col justify-start items-center md:items-start text-center md:text-left">
-            <h1 className="text-green-500 font-bold md:text-9xl text-5xl">
-              FULL-STACK DEVELOPER
-            </h1>
-            <p className="max-w-2xl mt-4 text-lg">
-              I am an experienced Web Developer with a passion for creating user
-              interfaces that are simple to use. I will create extremely high
-              quality user interfaces in a short amount of time.
-            </p>
-            <div className="flex flex-col md:flex-row mt-6">
-              <Button size="lg" variant="secondary" className="mb-4">
-                Jump to projects
-              </Button>
-              <Button size="lg" variant="link" asChild>
-                <Link href="mailto:makwnameet7301@gmail.com">
-                  makwnameet7301@gmail.com
-                </Link>
-              </Button>
+          <div className="flex justify-between">
+            <div className="flex flex-col justify-start items-center md:items-start text-center md:text-left">
+              <h1 className="text-green-500 font-bold md:text-9xl text-5xl">
+                FULL-STACK DEVELOPER
+              </h1>
+              <p className="max-w-2xl mt-4 text-lg">
+                I am an experienced Web Developer with a passion for creating
+                user interfaces that are simple to use. I will create extremely
+                high quality user interfaces in a short amount of time.
+              </p>
+              <div className="flex flex-col md:flex-row mt-6">
+                <Button size="lg" variant="secondary" className="mb-4">
+                  Jump to projects
+                </Button>
+                <Button size="lg" variant="link" asChild>
+                  <Link href="mailto:makwnameet7301@gmail.com">
+                    makwnameet7301@gmail.com
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="absolute -right-[300px]">
+              <HeroSvg className="-scale-x-100" />
             </div>
           </div>
         </section>

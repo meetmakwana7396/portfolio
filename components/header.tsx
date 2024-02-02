@@ -17,7 +17,6 @@ const Header = () => {
           <Navlink href="#about">About</Navlink>
         </li>
         {/* <li>Blog</li> */}
-        {/*  */}
         <li>
           <Navlink
             href="https://www.dropbox.com/scl/fi/ucrowekfxacwidx43ctg1/Meet-Makwana-Resume.docx?rlkey=kmam2hzjast7ee565kt2m56sj&dl=0"
