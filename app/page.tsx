@@ -46,11 +46,11 @@ export default function Home() {
         </section>
 
         <section
-          className="max-w-lg mx-auto md:mx-0 space-y-6 text-center md:text-left"
+          className="max-w-2xl mx-auto md:mx-0 space-y-6 text-center md:text-left"
           id="about"
         >
           <h1 className="text-4xl">About</h1>
-          <p>
+          <p className="text-lg">
             I&apos;m Meet Makwana, a frontend developer currently located in
             Seattle. I bring a diverse skill set to the table, specializing in
             crafting exceptional user experiences through my expertise in
@@ -70,7 +70,8 @@ export default function Home() {
         </section>
 
         {/* Get in touch section  */}
-        <section className="h-72 flex justify-center items-center">
+        <section className="h-36 flex flex-col gap-4 justify-start items-center">
+          <h2 className="text-xl">Stay in touch and connect for exclusive content</h2>
           <div className="flex gap-x-4 items-center">
             {socialData.map((social) => (
               <Link
@@ -81,8 +82,9 @@ export default function Home() {
               >
                 <Image
                   src={social.imageURL}
-                  height={32}
-                  width={32}
+                  height={28}
+                  width={28}
+                  className="hover:scale-110 transition"
                   alt={social.url}
                 />
               </Link>
