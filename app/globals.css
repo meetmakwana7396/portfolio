@@ -77,6 +77,6 @@
 
 @layer components {
   .stack-card {
-    @apply flex flex-col border border-neutral-900 p-8 space-y-4 hover:bg-green-500/10 max-h-[450px] relative h-full;
+    @apply flex flex-row sm:flex-col border border-neutral-800 sm:p-8 p-4 sm:space-y-4 sm:space-x-0 space-x-4 items-center sm:items-start hover:bg-green-500/10 max-h-[450px] relative h-full;
   }
 }

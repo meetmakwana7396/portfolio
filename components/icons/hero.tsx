@@ -2,9 +2,9 @@ const HeroSvg = ({ className }: { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1080"
+      width="950"
       height="950"
-      viewBox="0 0 1080 1080"
+      viewBox="0 0 950 1080"
       fill="none"
       className={className}
     >

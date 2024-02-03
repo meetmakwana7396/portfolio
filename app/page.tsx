@@ -6,6 +6,7 @@ import { stackData } from "@/app/data/stack-data";
 import HeroSvg from "@/components/icons/hero";
 import Image from "next/image";
 import { socialData } from "./data/social-data";
+import { Mail } from "lucide-react";
 
 export const metadata = {
   title: "Meet Makwana",
@@ -17,52 +18,63 @@ export default function Home() {
     <div className="container">
       <Header />
       <div className="space-y-32">
-        <section className="mt-32" id="hii">
+        <section className="mt-24 sm:mt-32" id="hii">
           <div className="flex justify-between">
-            <div className="flex flex-col justify-start items-center md:items-start text-center md:text-left">
-              <h1 className="text-green-500 font-bold md:text-9xl text-5xl">
+            <div className="flex flex-col justify-start md:items-start text-left">
+              <h1 className="text-green-500 font-bold md:text-6xl text-5xl mb-2 md:mb-4">
                 FULL-STACK DEVELOPER
               </h1>
-              <p className="max-w-2xl mt-4 text-lg">
-                I am an experienced Web Developer with a passion for creating
-                user interfaces that are simple to use. I will create extremely
-                high quality user interfaces in a short amount of time.
+              <p className="max-w-2xl mt-2 md:mt-4 text-lg mb-4 md:mb-6">
+                Experienced Full-Stack Developer passionate about creating
+                user-friendly interfaces. Specializing in delivering
+                high-quality UIs efficiently.
               </p>
-              <div className="flex flex-col md:flex-row mt-6">
-                <Button size="lg" variant="secondary" className="mb-4">
-                  Jump to projects
+
+              <div className="flex flex-col md:flex-row mt-4 md:mt-6">
+                <Button
+                  size="lg"
+                  variant="default"
+                  className="mb-2 md:mb-0 md:mr-4"
+                >
+                  Discover My Skills
                 </Button>
-                <Button size="lg" variant="link" asChild>
-                  <Link href="mailto:makwnameet7301@gmail.com">
-                    makwnameet7301@gmail.com
+                <Button size="lg" variant="outline" className="group" asChild>
+                  <Link
+                    className="flex gap-2 items-center"
+                    href="mailto:makwnameet7301@gmail.com"
+                  >
+                    <Mail className="w-4 h-4 group-hover:stroke-black transition" />
+                    Contact me
                   </Link>
                 </Button>
               </div>
             </div>
-            <div className="absolute -right-[150px]">
+
+            <div className="absolute z-0 lg:-right-[350px] xl:-right-[300px] 2xl:-right-[100px] hidden lg:block">
               <HeroSvg className="-scale-x-100" />
             </div>
           </div>
         </section>
 
-        <section
-          className="max-w-2xl mx-auto md:mx-0 space-y-6 text-center md:text-left"
-          id="about"
-        >
+        <section className="max-w-2xl space-y-6" id="about">
           <h1 className="text-4xl">About</h1>
           <p className="text-lg">
-            I&apos;m Meet Makwana, a frontend developer currently located in
-            Seattle. I bring a diverse skill set to the table, specializing in
-            crafting exceptional user experiences through my expertise in
-            interaction, visual, brand, and motion design. With a passion for
-            overcoming challenges that require creativity and innovation, I
-            thrive in the dynamic world of design.
+            Hii, I am Meet, an accomplished full-stack web developer boasting
+            nearly 2 years of professional experience. My area of expertise
+            primarily lies in front-end development, where I proficiently
+            utilize technologies such as NextJS, React, JavaScript, and
+            TypeScript. I take pride in meticulously crafting seamless user
+            experiences and strategically leverage advanced tools, including AI
+            applications like ChatGPT, to elevate the functionality of digital
+            solutions. I am eager to engage in collaborative efforts to
+            transform conceptual ideas into sophisticated and innovative digital
+            solutions.
           </p>
         </section>
 
-        <section className="space-y-6">
-          <h1 className="text-4xl text-center md:text-left">Tech Stack</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section className="space-y-6 lg:pt-[150px]">
+          <h1 className="text-4xl">Tech Stack</h1>
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {stackData.map((tech, index: number) => (
               <StackCard item={tech} key={index} />
             ))}
@@ -70,8 +82,10 @@ export default function Home() {
         </section>
 
         {/* Get in touch section  */}
-        <section className="h-36 flex flex-col gap-4 justify-start items-center">
-          <h2 className="text-xl">Stay in touch and connect for exclusive content</h2>
+        <footer className="h-36 flex flex-col gap-4 justify-start items-center">
+          <h2 className="sm:text-xl text-center">
+            Stay in touch and connect for exclusive content
+          </h2>
           <div className="flex gap-x-4 items-center">
             {socialData.map((social) => (
               <Link
@@ -90,7 +104,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </section>
+        </footer>
       </div>
     </div>
   );
