@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 const Header = () => {
   return (
-    <div className="flex py-4 sm:py-10 justify-between sticky top-0 bg-black">
+    <div className="flex items-center justify-between sm:h-24 h-16 sticky top-0">
       <Link href="/" className="text-2xl">
         <i>m</i>
         <sup className="ml-1">2</sup>

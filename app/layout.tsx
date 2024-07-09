@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Chivo_Mono as Chivo } from "next/font/google";
+import { Roboto, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const chivo = Chivo({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(chivo.className)}>
-        <div className="relative px-6 antialiased text-base sm:px-10 overflow-hidden">{children}</div>
+      <body className={cn(inter.className)}>
+        <div className="relative px-6 antialiased text-base sm:px-10 overflow-hidden">
+          {children}
+        </div>
       </body>
     </html>
   );
