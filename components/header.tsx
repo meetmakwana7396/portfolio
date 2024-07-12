@@ -24,12 +24,13 @@ const Header = () => {
           <li>
             <Navlink
               href="https://www.dropbox.com/scl/fi/ucrowekfxacwidx43ctg1/Meet-Makwana-Resume.docx?rlkey=kmam2hzjast7ee565kt2m56sj&dl=0"
-              target="_blank"
-            >
+              target="_blank">
               Resume
             </Navlink>
           </li>
-          <li>Get in touch</li>
+          <li>
+            <Navlink href="#contact">Get in touch</Navlink>
+          </li>
         </ul>
       </div>
       <div className="block sm:hidden">
