@@ -33,8 +33,8 @@ const HeroSection = () => {
             data-aos="fade-down"
             data-aos-duration="500"
             data-aos-delay="300">
-            <Button className="flex gap-2">
-              Contact Me <MoveRight color="black" />{" "}
+            <Button className="flex gap-2 group">
+              Contact Me <MoveRight color="black" className="group-hover:translate-x-1 transition" />{" "}
             </Button>
             <Button variant={"outline"} asChild>
               <Link href="https://techmeet.hashnode.dev/" target="_blank">
