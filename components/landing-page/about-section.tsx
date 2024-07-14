@@ -3,7 +3,7 @@ import React from "react";
 const AboutSection = () => {
   return (
     <section
-      className="flex justify-center items-start text-center h-[70vh]"
+      className="flex justify-center items-start text-center"
       id="about">
       <div className="space-y-6">
         <h1 className="text-4xl font-semibold text-center">ABOUT ME</h1>

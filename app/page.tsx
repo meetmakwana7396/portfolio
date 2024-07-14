@@ -7,20 +7,13 @@ import { socialData } from "./data/social-data";
 import HeroSection from "@/components/landing-page/hero-section";
 import AosProvider from "@/components/aos-provider";
 import AboutSection from "@/components/landing-page/about-section";
+import SkillsSection from "@/components/landing-page/skills-section";
 
 export const metadata = {
   title: "Meet Makwana",
-  description: "Meet Makwana is a full-stack developer.",
+  description:
+    "Frontend developer who loves creating simple and minimalistic designs.",
 };
-
-const gallery = [
-  "nature-1.jpg",
-  "nature-2.jpg",
-  "nature-3.jpg",
-  "nature-4.jpg",
-  "nature-5.jpg",
-  "nature-6.jpg",
-];
 
 export default function Home() {
   return (
@@ -28,7 +21,10 @@ export default function Home() {
       <div className="container">
         <Header />
         <HeroSection />
-        <AboutSection />
+        <div className="space-y-28 mb-20">
+          <AboutSection />
+          <SkillsSection />
+        </div>
       </div>
     </AosProvider>
   );
