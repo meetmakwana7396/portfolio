@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareJs } from "@fortawesome/free-brands-svg-icons/faSquareJs";
 import {
   faBootstrap,
-  faNode,
   faNodeJs,
   faReact,
 } from "@fortawesome/free-brands-svg-icons";
@@ -17,12 +16,23 @@ import IconRadix from "../icons/icon-radix";
 import IconExpress from "../icons/icon-express";
 import IconAdonis from "../icons/icon-adonis";
 
-export default function SkillsSection() {
+export default function TechnologySection() {
   return (
-    <section id="skills" className="space-y-6 max-w-2xl mx-auto">
-      <h1 className="text-4xl font-semibold text-center">Technologies</h1>
+    <section id="technologies" className="space-y-6 max-w-4xl mx-auto">
+      <h1
+        className="text-4xl font-semibold text-center"
+        data-aos="fade-up"
+        data-aos-duration="500"
+        data-aos-anchor-placement="center-bottom">
+        TECHNOLOGIES
+      </h1>
+
       <div className="grid grid-cols-2 gap-4">
-        <SkillCategoryCard className="col-span-2">
+        <SkillCategoryCard
+          className="col-span-2"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-anchor-placement="center-bottom">
           <h2 className="text-xl text-green-300"># Frontend</h2>
           <div className="flex flex-wrap gap-4 items-center">
             <SkillBadge>
@@ -58,7 +68,11 @@ export default function SkillsSection() {
             </SkillBadge>
           </div>
         </SkillCategoryCard>
-        <SkillCategoryCard>
+
+        <SkillCategoryCard
+          data-aos="fade-right"
+          data-aos-duration="500"
+          data-aos-anchor-placement="center-bottom">
           <h2 className="text-xl text-green-300"># Backend</h2>
           <div className="flex flex-wrap gap-4 items-center">
             <SkillBadge>
@@ -75,7 +89,11 @@ export default function SkillsSection() {
             </SkillBadge>
           </div>
         </SkillCategoryCard>
-        <SkillCategoryCard>
+
+        <SkillCategoryCard
+          data-aos="fade-left"
+          data-aos-duration="500"
+          data-aos-anchor-placement="center-bottom">
           <h2 className="text-xl text-green-300"># Database</h2>
           <div className="flex flex-wrap gap-4 items-center">
             <SkillBadge>SQL</SkillBadge>
@@ -93,12 +111,15 @@ export default function SkillsSection() {
 function SkillCategoryCard({
   children,
   className,
+  ...rest
 }: {
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <div className={cn("space-y-4 border border-neutral-700 p-8", className)}>
+    <div
+      className={cn("space-y-4 rounded-[28px] bg-neutral-200/5 shadow border-neutral-700 p-8", className)}
+      {...rest}>
       {children}
     </div>
   );

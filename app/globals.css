@@ -72,7 +72,7 @@
 
 @layer base {
   * {
-    @apply border-border text-neutral-300 scroll-smooth scroll-mt-48;
+    @apply border-border text-neutral-300 scroll-smooth scroll-mt-24;
   }
   body {
     @apply bg-black/90 text-foreground;

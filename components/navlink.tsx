@@ -11,7 +11,7 @@ const Navlink = ({ children, href, target }: INavlink) => {
   return (
     <Link
       href={href}
-      className="hover:underline decoration-4 decoration-blue-500"
+      className="hover:underline py-2 underline-offset-4 decoration-4 decoration-blue-500"
       target={target}
     >
       {children}

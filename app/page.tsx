@@ -2,7 +2,8 @@ import Header from "@/components/header";
 import HeroSection from "@/components/landing-page/hero-section";
 import AosProvider from "@/components/aos-provider";
 import AboutSection from "@/components/landing-page/about-section";
-import SkillsSection from "@/components/landing-page/skills-section";
+import ArticleSection from "@/components/landing-page/article-section";
+import TechnologySection from "@/components/landing-page/technology-section";
 
 export const metadata = {
   title: "Meet Makwana",
@@ -16,9 +17,10 @@ export default async function Home() {
       <div className="container">
         <Header />
         <HeroSection />
-        <div className="space-y-28 mb-20">
+        <div className="space-y-44 mb-20">
           <AboutSection />
-          <SkillsSection />
+          <TechnologySection />
+          <ArticleSection />
         </div>
       </div>
     </AosProvider>

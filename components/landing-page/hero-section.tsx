@@ -14,10 +14,7 @@ const HeroSection = () => {
     <section className="flex h-[calc(100vh-64px)]" id="hii">
       <div className="w-full flex justify-center">
         <div className="max-w-[500px] text-center h-fit mt-24">
-          <div
-            className="space-y-4"
-            data-aos="fade-down"
-            data-aos-duration="500">
+          <div className="space-y-4" data-aos="fade-up" data-aos-duration="500">
             <p className="font-normal text-xl text-neutral-500">
               Hii, my name is
             </p>
