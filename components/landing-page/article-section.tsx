@@ -24,7 +24,10 @@ export default async function ArticleSection() {
       </h1>
       <div className="grid grid-cols-3 gap-6">
         {postsArray?.map((post) => (
-          <ArticleCard coverImageUrl={post?.coverImage?.url} className="group">
+          <ArticleCard
+            coverImageUrl={post?.coverImage?.url}
+            className="group"
+            key={post?.id}>
             <ArticleTitle>
               <h2 className="font-semibold group-hover:text-green-300 hover:cursor-pointer">
                 {post?.title}
