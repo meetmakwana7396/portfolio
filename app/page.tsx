@@ -1,9 +1,4 @@
 import Header from "@/components/header";
-import StackCard from "@/components/stack-card";
-import Link from "next/link";
-import { stackData } from "@/app/data/stack-data";
-import Image from "next/image";
-import { socialData } from "./data/social-data";
 import HeroSection from "@/components/landing-page/hero-section";
 import AosProvider from "@/components/aos-provider";
 import AboutSection from "@/components/landing-page/about-section";
@@ -15,7 +10,7 @@ export const metadata = {
     "Frontend developer who loves creating simple and minimalistic designs.",
 };
 
-export default function Home() {
+export default async function Home() {
   return (
     <AosProvider>
       <div className="container">

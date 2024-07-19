@@ -16,7 +16,6 @@ import IconRedux from "../icons/icon-redux";
 import IconRadix from "../icons/icon-radix";
 import IconExpress from "../icons/icon-express";
 import IconAdonis from "../icons/icon-adonis";
-import IconSql from "../icons/icon-sql";
 
 export default function SkillsSection() {
   return (
