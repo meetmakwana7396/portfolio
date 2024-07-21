@@ -1,23 +1,24 @@
 import { gql } from "@apollo/client";
 
 export const GET_ARTICLES = gql`
-  query Publication($host: String) {
+  query Publication($host: String, $pageSize: Int!, $page: Int!) {
     publication(host: $host) {
       isTeam
       title
-      posts(first: 6) {
-        edges {
-          node {
-            id
-            title
-            subtitle
-            brief
+      postsViaPage(pageSize: $pageSize, page: $page) {
+        nodes {
+          id
+          title
+          subtitle
+          brief
+          url
+          slug
+          coverImage {
             url
-            slug
-            coverImage {
-              url
-            }
           }
+        }
+        pageInfo {
+          hasNextPage
         }
       }
     }

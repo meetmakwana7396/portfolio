@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
 
 export function ArticleCard({
   coverImageUrl,
@@ -56,7 +54,7 @@ export function ArticleContent({
       <div className="flex absolute items-center group bottom-0 w-full justify-between">
         <span className="text-xs font-light">July 19, 2024</span>
         <ArrowRight
-          className="size-5 -rotate-45 group-hover:rotate-0 transition"
+          className="size-5 group-hover:-rotate-45 group-hover:stroke-green-300 transition"
           strokeWidth={1.5}
         />
       </div>

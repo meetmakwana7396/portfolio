@@ -9,9 +9,7 @@ import { Button } from "../ui/button";
 
 export default async function ArticleSection() {
   const { data, loading, errors } = await Hashnode.getArticles();
-  const postsArray = (data?.publication?.posts?.edges as Array<any>)?.flatMap(
-    (article: any) => article.node
-  );
+  const postsArray = data?.publication?.postsViaPage?.nodes;
 
   return (
     <section id="articles" className="space-y-6 max-w-4xl mx-auto">
@@ -23,7 +21,7 @@ export default async function ArticleSection() {
         ARTICLES
       </h1>
       <div className="grid grid-cols-3 gap-6">
-        {postsArray?.map((post) => (
+        {postsArray?.map((post: any) => (
           <ArticleCard
             coverImageUrl={post?.coverImage?.url}
             className="group"
