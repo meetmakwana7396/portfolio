@@ -2,7 +2,13 @@ import client from "./apollo-client";
 import { GET_ARTICLES } from "./queries";
 
 export const Hashnode = {
-  getArticles: async (pageSize?: number, page?: number): Promise<any> => {
+  getArticles: async ({
+    pageSize,
+    page,
+  }: {
+    pageSize?: number;
+    page?: number;
+  }): Promise<any> => {
     try {
       const response = await client.query({
         query: GET_ARTICLES,

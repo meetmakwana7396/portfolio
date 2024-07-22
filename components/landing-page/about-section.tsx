@@ -12,7 +12,7 @@ const AboutSection = () => {
           ABOUT ME
         </h1>
         <p
-          className="text-lg max-w-3xl font-thin mx-auto text-center"
+          className="text-lg max-w-3xl font-thin mx-auto w-auto text-center"
           data-aos="fade-up"
           data-aos-duration="500"
           data-aos-anchor-placement="center-bottom">

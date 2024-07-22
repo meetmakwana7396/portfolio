@@ -4,10 +4,11 @@ import Navlink from "./navlink";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import ScrollToTop from "./landing-page/scroll-to-top";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between sm:h-24 h-16 sticky top-0">
+    <div className="flex container border w-full bg-zinc-900 z-10 items-center justify-between sm:h-24 h-16">
       <Link
         href="/"
         className="text-2xl"
@@ -22,27 +23,17 @@ const Header = () => {
         data-aos-duration="500">
         <ul className="flex gap-8">
           <li>
-            <Navlink href="#hii">Hii</Navlink>
+            <Navlink href="/#hii">Hii</Navlink>
           </li>
           <li>
-            <Navlink href="#about">About</Navlink>
+            <Navlink href="/#about">About</Navlink>
           </li>
           <li>
-            <Navlink href="#technologies">Technologies</Navlink>
+            <Navlink href="/#technologies">Technologies</Navlink>
           </li>
           <li>
-            <Navlink href="#articles">Articles</Navlink>
+            <Navlink href="/#articles">Articles</Navlink>
           </li>
-          {/* <li>
-            <Navlink
-              href="https://www.dropbox.com/scl/fi/ucrowekfxacwidx43ctg1/Meet-Makwana-Resume.docx?rlkey=kmam2hzjast7ee565kt2m56sj&dl=0"
-              target="_blank">
-              Resume
-            </Navlink>
-          </li> */}
-          {/* <li>
-            <Navlink href="#contact">Get in touch</Navlink>
-          </li> */}
         </ul>
       </div>
       <div className="block sm:hidden">
@@ -55,6 +46,7 @@ const Header = () => {
           <SheetContent>Hello</SheetContent>
         </Sheet>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

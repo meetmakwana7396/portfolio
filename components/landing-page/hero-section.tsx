@@ -34,9 +34,7 @@ const HeroSection = () => {
                 <MoveRight className="group-hover:translate-x-1 ease-in transition stroke-black" />
               </Button>
               <Button variant={"outline"} asChild>
-                <Link href="https://techmeet.hashnode.dev/" target="_blank">
-                  Read my articles
-                </Link>
+                <Link href="#articles">Read my articles</Link>
               </Button>
             </div>
             <div className="flex justify-center items-center text-center gap-6 pt-6">

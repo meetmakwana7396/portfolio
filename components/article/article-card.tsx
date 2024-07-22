@@ -15,7 +15,7 @@ export function ArticleCard({
   return (
     <div
       className={cn(
-        "bg-neutral-200/5 shadow h-[348px] rounded-[28px] w-full p-4 flex flex-col gap-2",
+        "bg-neutral-200/5 shadow h-[356px] rounded-[28px] w-full p-4 flex flex-col gap-2",
         className
       )}
       data-aos="fade-up"
@@ -27,7 +27,7 @@ export function ArticleCard({
           width={1000}
           height={100}
           alt="article_cover_image"
-          className="w-full object-cover rounded-xl"
+          className="w-full h-36 object-cover rounded-xl"
         />
       )}
       {children}
