@@ -34,7 +34,7 @@ export default function TechnologySection() {
         </SkillCategoryCard>
 
         <SkillCategoryCard
-          data-aos="fade-right"
+          data-aos="fade-up"
           data-aos-duration="500"
           data-aos-anchor-placement="center-bottom">
           <h2 className="text-xl text-green-300"># Backend</h2>
@@ -47,7 +47,7 @@ export default function TechnologySection() {
         </SkillCategoryCard>
 
         <SkillCategoryCard
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-duration="500"
           data-aos-anchor-placement="center-bottom">
           <h2 className="text-xl text-green-300"># Database</h2>

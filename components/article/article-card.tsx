@@ -1,19 +1,23 @@
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export function ArticleCard({
   coverImageUrl,
+  slug,
   className,
   children,
 }: {
   coverImageUrl?: string;
+  slug: string;
   className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <div
+    <Link
+      href={`/articles/${slug}`}
       className={cn(
         "bg-neutral-200/5 shadow h-[356px] rounded-[28px] w-full p-4 flex flex-col gap-2",
         className
@@ -31,7 +35,7 @@ export function ArticleCard({
         />
       )}
       {children}
-    </div>
+    </Link>
   );
 }
 

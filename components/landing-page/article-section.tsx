@@ -1,5 +1,4 @@
 import { Hashnode } from "@/lib/hashnode";
-import Image from "next/image";
 import {
   ArticleCard,
   ArticleContent,
@@ -28,6 +27,7 @@ export default async function ArticleSection() {
         {postsArray?.map((post: any) => (
           <ArticleCard
             coverImageUrl={post?.coverImage?.url}
+            slug={post?.slug}
             className="group"
             key={post?.id}>
             <ArticleTitle>

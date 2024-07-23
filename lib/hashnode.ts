@@ -1,5 +1,5 @@
 import client from "./apollo-client";
-import { GET_ARTICLES } from "./queries";
+import { GET_ARTICLE_BY_POST, GET_ARTICLES } from "./queries";
 
 export const Hashnode = {
   getArticles: async ({
@@ -16,6 +16,22 @@ export const Hashnode = {
           host: process.env.NEXT_PUBLIC_HASHNODE_HOST!,
           pageSize: pageSize || 6,
           page: page || 1,
+        },
+      });
+      return response;
+    } catch (error) {
+      console.error("HELLO", error);
+      return error;
+    }
+  },
+
+  getArticleBySlug: async (slug: string): Promise<any> => {
+    try {
+      const response = await client.query({
+        query: GET_ARTICLE_BY_POST,
+        variables: {
+          host: process.env.NEXT_PUBLIC_HASHNODE_HOST!,
+          slug,
         },
       });
       return response;
