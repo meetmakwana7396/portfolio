@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Merriweather, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import AosProvider from "@/components/aos-provider";
@@ -7,6 +7,13 @@ import Header from "@/components/header";
 
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-jet-brains",
+});
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  style: ["italic", "normal"],
+  weight: ["300", "400", "700", "900"],
+  variable: "--font-merriweather",
 });
 
 export const metadata: Metadata = {
@@ -22,11 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(jetBrains.className)}>
+      <body className={cn(jetBrains.className, merriweather.variable)}>
         <AosProvider>
-          <div className="relative antialiased text-base sm:px-10">
+          <div className="relative antialiased text-base   sm:px-10">
             <Header />
-            {children}
+            {children}            
           </div>
         </AosProvider>
       </body>

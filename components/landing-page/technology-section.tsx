@@ -92,7 +92,7 @@ function SkillCategoryCard({
   return (
     <div
       className={cn(
-        "space-y-4 rounded-[28px] bg-neutral-200/5 shadow border-neutral-700 p-8",
+        "space-y-4 rounded-[28px] bg-neutral-200/5 min-h-[200px] shadow border-neutral-700 p-8",
         className
       )}
       {...rest}>
