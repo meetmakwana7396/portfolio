@@ -30,7 +30,9 @@ export default async function SingleArticlePage({
         </p>
         <div className="flex flex-wrap gap-2 sm:px-0 px-4">
           {tags.map((tag: { id: string; name: string; slug: string }) => (
-            <span className="rounded-lg bg-neutral-600 py-1 px-2 sm:text-sm text-xs">
+            <span
+              className="rounded-lg bg-neutral-600 py-1 px-2 sm:text-sm text-xs"
+              key={tag.id}>
               #{tag.name}
             </span>
           ))}

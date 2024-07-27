@@ -31,9 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(jetBrains.className, merriweather.variable)}>
         <AosProvider>
-          <div className="relative antialiased text-base   sm:px-10">
+          <div className="relative antialiased text-base sm:px-10">
             <Header />
-            {children}            
+            {children}
           </div>
         </AosProvider>
       </body>
