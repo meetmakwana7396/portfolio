@@ -3,7 +3,6 @@ import {
   ArticleContent,
   ArticleTitle,
 } from "@/components/article/article-card";
-import { Button } from "@/components/ui/button";
 import { Hashnode } from "@/lib/hashnode";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -23,14 +22,14 @@ export default async function ArticlePage({
   const pageInfo = data?.publication?.postsViaPage?.pageInfo;
 
   return (
-    <section className="container mt-10">
+    <section className="container mt-10 px-4 sm:px-0">
       <h1
         className="text-5xl font-bold"
         data-aos="fade-up"
         data-aos-duration="500">
         ARTICLES
       </h1>
-      <div className="grid grid-cols-4 gap-4 my-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 my-10">
         {postsArray?.map((post: any) => (
           <ArticleCard
             coverImageUrl={post?.coverImage?.url}

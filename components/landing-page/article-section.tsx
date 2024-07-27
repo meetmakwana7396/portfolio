@@ -15,7 +15,7 @@ export default async function ArticleSection() {
   const postsArray = data?.publication?.postsViaPage?.nodes;
 
   return (
-    <section id="articles" className="space-y-6 max-w-4xl mx-auto">
+    <section id="articles" className="space-y-6 max-w-4xl mx-auto px-4 sm:px-0">
       <h1
         className="text-4xl font-semibold text-center"
         data-aos="fade-up"

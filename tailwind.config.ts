@@ -113,6 +113,7 @@ const config = {
 
       fontFamily: {
         sans: ["var(--font-merriweather)"],
+        jetBrains: ["var(--font-jet-brains)"],
       },
       container: {
         center: true,

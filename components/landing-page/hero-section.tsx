@@ -11,7 +11,7 @@ import {
 
 const HeroSection = () => {
   return (
-    <section className="flex h-[calc(100vh-64px)]" id="hii">
+    <section className="flex h-[calc(100vh-64px)] px-4 sm:px-0" id="hii">
       <div className="w-full flex justify-center">
         <div className="max-w-[500px] text-center h-fit mt-24">
           <div className="space-y-4" data-aos="fade-up" data-aos-duration="500">
@@ -54,7 +54,7 @@ const HeroSection = () => {
                 </Link>
               </Button>
               <Button size={"icon"} variant={"ghost"} asChild>
-                <Link href="https://techmeet.hashnode.dev/">
+                <Link href="https://meetblogs.hashnode.dev/">
                   <FontAwesomeIcon icon={faHashnode} className="size-6" />
                 </Link>
               </Button>

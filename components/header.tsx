@@ -8,7 +8,7 @@ import ScrollToTop from "./landing-page/scroll-to-top";
 
 const Header = () => {
   return (
-    <div className="flex container w-full bg-zinc-900 z-10 items-center justify-between sm:h-24 h-16">
+    <div className="flex container w-full sm:px-0 ps-6 pr-3 bg-zinc-900 z-10 items-center justify-between sm:h-24 h-20">
       <Link
         href="/"
         className="text-2xl"

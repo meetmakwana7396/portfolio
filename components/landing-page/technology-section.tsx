@@ -4,7 +4,9 @@ import { Badge } from "../ui/badge";
 
 export default function TechnologySection() {
   return (
-    <section id="technologies" className="space-y-6 max-w-4xl mx-auto">
+    <section
+      id="technologies"
+      className="space-y-6 max-w-4xl px-4 sm:px-0 mx-auto">
       <h1
         className="text-4xl font-semibold text-center"
         data-aos="fade-up"
@@ -13,7 +15,7 @@ export default function TechnologySection() {
         TECHNOLOGIES
       </h1>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <SkillCategoryCard
           className="sm:col-span-2"
           data-aos="fade-up"
