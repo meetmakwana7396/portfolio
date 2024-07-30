@@ -4,7 +4,6 @@ import {
   ArticleContent,
   ArticleTitle,
 } from "../article/article-card";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
 export default async function ArticleSection() {
@@ -16,41 +15,26 @@ export default async function ArticleSection() {
 
   return (
     <section id="articles" className="space-y-6 max-w-4xl mx-auto px-4 sm:px-0">
-      <h1
-        className="text-4xl font-semibold text-center"
-        data-aos="fade-up"
-        data-aos-duration="500"
-        data-aos-anchor-placement="center-bottom">
-        ARTICLES
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {/* <h2 className="text-2xl flex gap-3 items-center font-semibold">
+        <BookOpen className="size-8" /> Articles
+      </h2> */}
+      <div className="grid grid-cols-1 space-y-8">
         {postsArray?.map((post: any) => (
           <ArticleCard
             coverImageUrl={post?.coverImage?.url}
             slug={post?.slug}
-            className="group"
             key={post?.id}>
-            <ArticleTitle>
-              <h2 className="font-semibold group-hover:text-green-300 hover:cursor-pointer">
-                {post?.title}
-              </h2>
-            </ArticleTitle>
+            <ArticleTitle>{post?.title}</ArticleTitle>
             <ArticleContent>
-              <p className="text-sm text-neutral-400 line-clamp-3 font-light">
-                {post?.subtitle ? post?.subtitle : post?.brief}
-              </p>
+              <p className="text-neutral-400 line-clamp-3">{post?.brief}</p>
             </ArticleContent>
           </ArticleCard>
         ))}
       </div>
-      <div
-        className="text-center"
-        data-aos="fade-up"
-        data-aos-duration="500"
-        data-aos-anchor-placement="top-bottom">
-        <Button asChild>
-          <Link href="/articles">View More</Link>
-        </Button>
+      <div className="text-left">
+        <Link href="/articles" className="blue-underline">
+          View More
+        </Link>
       </div>
     </section>
   );

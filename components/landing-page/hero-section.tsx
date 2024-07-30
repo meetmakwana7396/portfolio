@@ -1,6 +1,5 @@
-import { MoveRight } from "lucide-react";
-import { Button } from "../ui/button";
 import Link from "next/link";
+import { Button } from "../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -11,55 +10,40 @@ import {
 
 const HeroSection = () => {
   return (
-    <section className="flex h-[calc(100vh-64px)] px-4 sm:px-0" id="hii">
-      <div className="w-full flex justify-center">
-        <div className="max-w-[500px] text-center h-fit mt-24">
-          <div className="space-y-4" data-aos="fade-up" data-aos-duration="500">
-            <p className="font-normal text-xl text-neutral-500">
-              Hii, my name is
-            </p>
-            <h1 className="sm:text-7xl text-6xl tracking-wider font-bold">
-              MEET
-              <br />
-              MAKWANA
-            </h1>
-            <p className="font-light text-lg">
-              I&apos;m frontend developer who loves creating{" "}
-              <span className="text-yellow-300">simple</span> and{" "}
-              <span className="text-green-300">minimalistic</span> designs
-            </p>
-            <div className="flex justify-center gap-4 pt-4">
-              <Button className="flex gap-2 group font-semibold">
-                Contact Me
-                <MoveRight className="group-hover:translate-x-1 ease-in transition stroke-black" />
-              </Button>
-              <Button variant={"outline"} asChild>
-                <Link href="#articles">Read my articles</Link>
-              </Button>
-            </div>
-            <div className="flex justify-center items-center text-center gap-6 pt-6">
-              <Button size={"icon"} variant={"ghost"} asChild>
-                <Link href="https://github.com/meetmakwana7396?tab=repositories">
-                  <FontAwesomeIcon icon={faGithub} className="size-6" />
-                </Link>
-              </Button>
-              <Button size={"icon"} variant={"ghost"} asChild>
-                <Link href="https://x.com/meetmakwna">
-                  <FontAwesomeIcon icon={faXTwitter} className="size-6" />
-                </Link>
-              </Button>
-              <Button size={"icon"} variant={"ghost"} asChild>
-                <Link href="https://www.linkedin.com/in/meet-makwana-33458921b/">
-                  <FontAwesomeIcon icon={faLinkedinIn} className="size-6" />
-                </Link>
-              </Button>
-              <Button size={"icon"} variant={"ghost"} asChild>
-                <Link href="https://meetblogs.hashnode.dev/">
-                  <FontAwesomeIcon icon={faHashnode} className="size-6" />
-                </Link>
-              </Button>
+    <section className="flex" id="hii">
+      <div className="w-full">
+        <div className="text-left flex space-x-8">
+          <div className="text-2xl flex justify-center size-16 items-center rounded-full bg-black">
+            <div>
+              <i>m</i>
+              <sup className="ml-1">2</sup>
             </div>
           </div>
+          <div className="flex flex-col">
+            <h1 className="text-4xl font-bold">Meet Makwana</h1>
+            <p className="text-neutral-500">Experienced Frontend Engineer</p>
+          </div>
+        </div>
+        <p className="text-lg max-w-3xl font-light mt-10 mx-auto w-auto text-left">
+          I'm learning about shipping great products, becoming a better
+          developer, and growing a career in tech.
+        </p>
+        <div className="flex justify-start items-center gap-3 mt-10 font-semibold">
+          <Link
+            href="https://github.com/meetmakwana7396?tab=repositories"
+            className="blue-underline">
+            <span>Github</span>
+          </Link>
+          {" / "}
+          <Link href="https://x.com/meetmakwna" className="blue-underline">
+            <span>Twitter</span>
+          </Link>
+          {" / "}
+          <Link
+            href="https://www.linkedin.com/in/meet-makwana-33458921b/"
+            className="blue-underline">
+            <span>Linkedin</span>
+          </Link>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export default async function SingleArticlePage({
 
   const tags = data.publication.post.tags;
   return (
-    <section className="container max-w-5xl">
+    <section className="container">
       <div className="flex flex-col gap-4 mb-10">
         {data.publication.post.coverImage?.url && (
           <Image

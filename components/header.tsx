@@ -8,14 +8,14 @@ import ScrollToTop from "./landing-page/scroll-to-top";
 
 const Header = () => {
   return (
-    <div className="flex container w-full sm:px-0 ps-6 pr-3 bg-zinc-900 z-10 items-center justify-between sm:h-24 h-20">
+    <div className="flex container invisible w-full sm:px-0 ps-6 pr-3 bg-zinc-900 z-10 items-center justify-between sm:h-24 h-20">
       <Link
         href="/"
         className="text-2xl"
         data-aos="fade-right"
         data-aos-duration="500">
         <i>m</i>
-        <sup className="ml-1">2</sup>
+        <sup className="ml-1">2</sup> 
       </Link>
       <div
         className="hidden sm:block"

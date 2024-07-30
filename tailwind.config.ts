@@ -1,4 +1,3 @@
-import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -13,14 +12,8 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: "0.5rem",
-        sm: "1rem",
-        "2xl": "2rem",
-      },
-
       screens: {
-        "2xl": "1400px",
+        "2xl": "700px",
       },
     },
     extend: {
@@ -114,10 +107,6 @@ const config = {
       fontFamily: {
         sans: ["var(--font-merriweather)"],
         jetBrains: ["var(--font-jet-brains)"],
-      },
-      container: {
-        center: true,
-        padding: "0px 24px",
       },
       colors: {
         border: "hsl(var(--border))",
