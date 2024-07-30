@@ -13,15 +13,6 @@ export default async function SingleArticlePage({
   return (
     <section className="container">
       <div className="flex flex-col gap-4 mb-10">
-        {data.publication.post.coverImage?.url && (
-          <Image
-            src={data.publication.post.coverImage.url}
-            width={1000}
-            height={800}
-            className="sm:object-cover object-contain w-full sm:h-[500px] h-fit"
-            alt="cover-image"
-          />
-        )}
         <h1 className="text-3xl sm:text-5xl sm:px-0 px-4 font-extrabold leading-snug">
           {data.publication.post.title}
         </h1>

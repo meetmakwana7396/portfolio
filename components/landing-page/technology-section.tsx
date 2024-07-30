@@ -1,5 +1,3 @@
-import { Code2 } from "lucide-react";
-
 export default function TechnologySection() {
   return (
     <section
@@ -11,20 +9,19 @@ export default function TechnologySection() {
 
       <div className="grid grid-cols-1 gap-4">
         <p className="leading-loose">
-          <strong className="text-blue-500">Frontend</strong>: Typescript,
-          Javascript, React, Next, Radix, Tailwind, Bootstrap, Redux, Zhustand
+          <strong className="">Frontend</strong>: Typescript, Javascript, React,
+          Next, Radix, Tailwind, Bootstrap, Redux, Zhustand
         </p>
         <p className="leading-loose">
-          <strong className="text-blue-500">Backend</strong>: Node, Express,
-          Adonis, Prisma
+          <strong className="">Backend</strong>: Node, Express, Adonis, Prisma
         </p>
         <p className="leading-loose">
-          <strong className="text-blue-500">Database</strong>: SQL, NoSQL,
-          MySQL, MongoDB, Postgres, GraphQL
+          <strong className="">Database</strong>: SQL, NoSQL, MySQL, MongoDB,
+          Postgres, GraphQL
         </p>
         <p className="leading-loose">
-          <strong className="text-blue-500">Tools</strong>: VS Code, Postman,
-          phpMyAdmin, Git, Github, Notion
+          <strong className="">Tools</strong>: VS Code, Postman, phpMyAdmin,
+          Git, Github, Notion
         </p>
       </div>
     </section>

@@ -1,16 +1,8 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faHashnode,
-  faLinkedinIn,
-  faXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 
 const HeroSection = () => {
   return (
-    <section className="flex" id="hii">
+    <section className="flex px-4 sm:px-0" id="hii">
       <div className="w-full">
         <div className="text-left flex space-x-8">
           <div className="text-2xl flex justify-center size-16 items-center rounded-full bg-black">
@@ -20,7 +12,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="flex flex-col">
-            <h1 className="text-4xl font-bold">Meet Makwana</h1>
+            <h1 className="sm:text-4xl text-3xl font-bold">Meet Makwana</h1>
             <p className="text-neutral-500">Experienced Frontend Engineer</p>
           </div>
         </div>
