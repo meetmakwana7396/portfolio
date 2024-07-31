@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import AosProvider from "@/components/aos-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Noise from "@/components/noise";
+import Image from "next/image";
 
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -33,9 +35,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(jetBrains.className, merriweather.variable)}>
+        <Noise />
         <AosProvider>
-          <div className="relative antialiased text-base">
+          <div className="relative antialiased text-base bg-neutral-950">
             <Header />
+            <Image
+              src="/aurora2.png"
+              alt="lights"
+              width={1000}
+              height={1000}
+              className="w-full max-w-6xl h-fit object-contain absolute -top-10 opacity-40 lef-1/2 translate-x-1/3"
+            />
             {children}
             <Footer />
           </div>

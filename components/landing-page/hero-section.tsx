@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = () => {
   return (
     <section className="flex px-4 sm:px-0" id="hii">
-      <div className="w-full">
+      <div className="w-full mt-16">
         <div className="text-left flex space-x-8">
           <div className="text-2xl flex justify-center size-16 items-center rounded-full bg-black">
             <div>
