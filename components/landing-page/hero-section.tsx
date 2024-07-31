@@ -17,7 +17,7 @@ const HeroSection = () => {
           </div>
         </div>
         <p className="text-lg max-w-3xl font-light mt-10 mx-auto w-auto text-left">
-          I'm learning about shipping great products, becoming a better
+          I&apos;m learning about shipping great products, becoming a better
           developer, and growing a career in tech.
         </p>
         <div className="flex justify-start items-center gap-3 mt-10 font-semibold">
