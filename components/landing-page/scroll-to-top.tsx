@@ -33,7 +33,7 @@ const ScrollToTop = () => {
     <button
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-0 right-10 z-10 flex hidden size-14 items-center justify-center rounded-full bg-neutral-500/10 transition hover:bg-neutral-500/20 sm:block",
+        "pointer-events-none invisible fixed bottom-0 right-10 z-10 flex size-14 items-center justify-center rounded-full bg-neutral-500/10 transition hover:bg-neutral-500/20 sm:pointer-events-auto sm:visible",
         showButton ? "-translate-y-10" : "translate-y-14",
       )}
     >
