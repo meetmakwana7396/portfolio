@@ -7,6 +7,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Noise from "@/components/noise";
 import Image from "next/image";
+import ScrollToTop from "@/components/landing-page/scroll-to-top";
 
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -36,20 +37,21 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(jetBrains.className, merriweather.variable)}>
         <Noise />
-        <AosProvider>
-          <div className="relative antialiased text-base bg-neutral-950">
-            <Header />
+        <div className="relative bg-neutral-950 text-base antialiased">
+          <Header />
+          <ScrollToTop />
+          <div className="pointer-events-none absolute left-1/2 top-0 w-full -translate-x-1/2 transform sm:max-w-6xl">
             <Image
               src="/aurora2.png"
               alt="lights"
               width={1000}
               height={1000}
-              className="w-full max-w-6xl h-fit pointer-events-none select-none object-contain absolute -top-10 opacity-40 lef-1/2 translate-x-1/3"
+              className="h-fit w-full object-contain opacity-40"
             />
-            {children}
-            <Footer />
           </div>
-        </AosProvider>
+          <div className="sm:mt-24 mt-16">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

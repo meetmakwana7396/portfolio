@@ -8,19 +8,19 @@
 
 @layer base {
   * {
-    @apply text-neutral-300 scroll-smooth scroll-mt-24;
+    @apply scroll-mt-24 scroll-smooth text-neutral-300;
   }
   body {
     @apply bg-black;
   }
 
   .blue-underline {
-    @apply underline decoration-2 decoration-blue-500 hover:decoration-blue-700 underline-offset-4;
+    @apply underline decoration-blue-500 decoration-2 underline-offset-4 hover:decoration-blue-700;
   }
 }
 
 @layer components {
   .stack-card {
-    @apply flex flex-row sm:flex-col border border-neutral-800 sm:p-8 p-4 sm:space-y-4 sm:space-x-0 space-x-4 items-center sm:items-start hover:bg-green-500/10 max-h-[450px] relative h-full;
+    @apply relative flex h-full max-h-[450px] flex-row items-center space-x-4 border border-neutral-800 p-4 hover:bg-green-500/10 sm:flex-col sm:items-start sm:space-x-0 sm:space-y-4 sm:p-8;
   }
 }

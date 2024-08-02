@@ -1,16 +1,12 @@
 import Link from "next/link";
+import MyAvatar from "../layout/my-avatar";
 
 const HeroSection = () => {
   return (
-    <section className="flex px-4 sm:px-0" id="hii">
-      <div className="w-full mt-16">
+    <section className="flex px-4 sm:px-0 " id="hii">
+      <div className="w-full">
         <div className="text-left flex space-x-8">
-          <div className="text-2xl flex justify-center size-16 items-center rounded-full bg-black">
-            <div>
-              <i>m</i>
-              <sup className="ml-1">2</sup>
-            </div>
-          </div>
+          <MyAvatar />
           <div className="flex flex-col">
             <h1 className="sm:text-4xl text-3xl font-bold">Meet Makwana</h1>
             <p className="text-neutral-500">Experienced Frontend Engineer</p>

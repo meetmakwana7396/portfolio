@@ -22,17 +22,18 @@ export default async function ArticlePage({
   const pageInfo = data?.publication?.postsViaPage?.pageInfo;
 
   return (
-    <section className="container mt-10 px-4 sm:px-0">
+    <section className="container  px-4 sm:px-0">
       <h1 className="text-5xl font-bold">Articles</h1>
-      <div className="grid grid-cols-1 gap-4 my-10">
+      <div className="my-10 grid grid-cols-1 gap-4">
         {postsArray?.map((post: any) => (
           <ArticleCard
             coverImageUrl={post?.coverImage?.url}
             slug={post?.slug}
-            key={post?.id}>
+            key={post?.id}
+          >
             <ArticleTitle>{post?.title}</ArticleTitle>
             <ArticleContent>
-              <p className="text-neutral-400 line-clamp-3 font-light">
+              <p className="line-clamp-3 font-light text-neutral-400">
                 {post?.brief}
               </p>
             </ArticleContent>
@@ -40,14 +41,15 @@ export default async function ArticlePage({
         ))}
       </div>
       {/* <pre>{JSON.stringify(pageInfo, null, 2)}</pre> */}
-      <div className="flex justify-between mb-14 gap-8">
+      <div className="mb-14 flex justify-between gap-8">
         <div>
           <Link
             href={`?page=${pageInfo?.previousPage}`}
             className={cn(
-              "gap-4 flex justify-center items-center py-8 pe-10 transition rounded-lg border-2 border-transparent group",
-              !pageInfo?.hasPreviousPage && "pointer-events-none opacity-50"
-            )}>
+              "group flex items-center justify-center gap-4 rounded-lg border-2 border-transparent py-8 pe-10 transition",
+              !pageInfo?.hasPreviousPage && "pointer-events-none opacity-50",
+            )}
+          >
             <div className="group-hover:blue-underline">Previous</div>
           </Link>
         </div>
@@ -55,9 +57,10 @@ export default async function ArticlePage({
           <Link
             href={`?page=${pageInfo?.nextPage}`}
             className={cn(
-              "gap-4 flex justify-center items-center w-full py-8 ps-10 transition rounded-lg border-2 border-transparent group",
-              !pageInfo?.hasNextPage && "pointer-events-none opacity-50"
-            )}>
+              "group flex w-full items-center justify-center gap-4 rounded-lg border-2 border-transparent py-8 ps-10 transition",
+              !pageInfo?.hasNextPage && "pointer-events-none opacity-50",
+            )}
+          >
             <div className="group-hover:blue-underline">Next</div>
           </Link>
         </div>
