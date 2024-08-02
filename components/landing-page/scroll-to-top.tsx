@@ -33,9 +33,10 @@ const ScrollToTop = () => {
     <button
       onClick={scrollToTop}
       className={cn(
-        "fixed size-14 right-10 transition bg-neutral-800 border-blue-500 border z-10 bottom-0 rounded-full flex justify-center items-center",
-        showButton ? "-translate-y-10" : "translate-y-14"
-      )}>
+        "fixed bottom-0 right-10 z-10 flex hidden size-14 items-center justify-center rounded-full bg-neutral-500/10 transition hover:bg-neutral-500/20 sm:block",
+        showButton ? "-translate-y-10" : "translate-y-14",
+      )}
+    >
       <ArrowBigUp className="size-6 fill-blue-500 stroke-blue-500" />
     </button>
   );
