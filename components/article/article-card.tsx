@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 export function ArticleCard({
-  coverImageUrl,
   slug,
   className,
   children,
@@ -16,7 +15,10 @@ export function ArticleCard({
   return (
     <Link
       href={`/articles/${slug}`}
-      className={cn("w-full p-8 rounded hover:shadow-lg hover:bg-neutral-500/10 transition bg-neutral-500/5 flex flex-col gap-2", className)}>
+      className={cn(
+        "w-full p-8 rounded hover:shadow-lg hover:bg-neutral-500/20 transition bg-neutral-500/10 flex flex-col gap-2",
+        className
+      )}>
       {children}
     </Link>
   );

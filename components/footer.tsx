@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 const Footer = () => {
   return (
-    <footer className="w-full container my-10 px-4 sm:px-0">
+    <footer className="w-full container px-4 py-10 pb-20 sm:px-0">
       <p className="text-neutral-500 text-sm">
         Built with Next.js, Tailwind and Vercel
       </p>

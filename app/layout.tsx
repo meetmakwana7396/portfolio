@@ -44,7 +44,7 @@ export default function RootLayout({
               alt="lights"
               width={1000}
               height={1000}
-              className="w-full max-w-6xl h-fit object-contain absolute -top-10 opacity-40 lef-1/2 translate-x-1/3"
+              className="w-full max-w-6xl h-fit pointer-events-none select-none object-contain absolute -top-10 opacity-40 lef-1/2 translate-x-1/3"
             />
             {children}
             <Footer />
