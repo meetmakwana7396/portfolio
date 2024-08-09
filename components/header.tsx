@@ -51,7 +51,7 @@ const Header = () => {
           </li>
           <li>
             <Navlink
-              href="https://github.com/meetmakwana7396?tab=repositories"
+              href="https://github.com/meetmakwana7396"
               target="_blank"
             >
               Github

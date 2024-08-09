@@ -18,7 +18,7 @@ const HeroSection = () => {
         </p>
         <div className="flex justify-start items-center gap-3 mt-10 font-semibold">
           <Link
-            href="https://github.com/meetmakwana7396?tab=repositories"
+            href="https://github.com/meetmakwana7396"
             className="blue-underline">
             <span>Github</span>
           </Link>
