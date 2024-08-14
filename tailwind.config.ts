@@ -29,14 +29,14 @@ const config = {
               },
             },
             p: {
-              color: "#C4C4C4",
-              letterSpacing: "1px",
-              fontFamily: "var(--font-merriweather)",
+              color: "white",
+              fontFamily: "var(--font-jetbrains)",
+              fontWeight: "100",
               "@screen sm": {
                 fontSize: "16px", // Adjust as needed
               },
               "@screen md": {
-                fontSize: "18px", // Adjust as needed
+                fontSize: "16px", // Adjust as neede
               },
             },
             h1: {

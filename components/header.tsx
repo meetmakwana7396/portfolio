@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <div
       className={cn(
-        "shadow-black-900 container sticky sm:top-10 top-6 z-10 flex h-16 sm:w-full w-[95%] items-center justify-between rounded-xl bg-white/5 px-4 shadow-lg backdrop-blur-lg transition",
+        "shadow-black-900 container sticky top-6 z-10 flex h-16 w-[95%] items-center justify-between rounded-xl bg-white/5 px-4 shadow-lg backdrop-blur-lg transition sm:top-10 sm:w-full",
         pathname === "/"
           ? showHeader
             ? "translate-y-0"
@@ -50,10 +50,7 @@ const Header = () => {
             <Navlink href="/articles">Articles</Navlink>
           </li>
           <li>
-            <Navlink
-              href="https://github.com/meetmakwana7396"
-              target="_blank"
-            >
+            <Navlink href="https://github.com/meetmakwana7396" target="_blank">
               Github
             </Navlink>
           </li>
@@ -79,7 +76,28 @@ const Header = () => {
               <Menu />
             </Button>
           </SheetTrigger>
-          <SheetContent>Hello</SheetContent>
+          <SheetContent>
+            <div className="flex flex-col gap-4 mt-4">
+              <Link href="/articles" className="blue-underline">
+                <span>Articles</span>
+              </Link>
+              <Link
+                href="https://github.com/meetmakwana7396"
+                className="blue-underline"
+              >
+                <span>Github</span>
+              </Link>
+              <Link href="https://x.com/meetmakwna" className="blue-underline">
+                <span>Twitter</span>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/meet-makwana-33458921b/"
+                className="blue-underline"
+              >
+                <span>Linkedin</span>
+              </Link>
+            </div>
+          </SheetContent>
         </Sheet>
       </div>
     </div>

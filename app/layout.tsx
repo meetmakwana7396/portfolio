@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Merriweather } from "next/font/google";
+import { JetBrains_Mono, Merriweather, Nunito } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import AosProvider from "@/components/aos-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Noise from "@/components/noise";
@@ -12,6 +11,11 @@ import ScrollToTop from "@/components/landing-page/scroll-to-top";
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jet-brains",
+  display: "swap",
+});
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
   display: "swap",
 });
 const merriweather = Merriweather({
@@ -35,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(jetBrains.className, merriweather.variable)}>
+      <body className={cn(jetBrains.className, merriweather.variable, nunito.variable)}>
         <Noise />
         <div className="relative bg-neutral-950 text-base antialiased">
           <Header />
@@ -49,7 +53,7 @@ export default function RootLayout({
               className="h-fit w-full object-contain opacity-40"
             />
           </div>
-          <div className="sm:mt-24 mt-16">{children}</div>
+          <div className="mt-16 sm:mt-24">{children}</div>
           <Footer />
         </div>
       </body>
