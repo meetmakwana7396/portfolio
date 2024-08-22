@@ -30,6 +30,14 @@ export const metadata: Metadata = {
   title: "Meet Makwana",
   description:
     "Frontend developer who loves creating simple and minimalistic designs.",
+  openGraph: {
+    title: "Meet Makwana",
+    description: "Experienced Frontend Engineer",
+    url: "https://msquare.vercel.app",
+    siteName: "Meet Makwana",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -39,7 +47,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(jetBrains.className, merriweather.variable, nunito.variable)}>
+      <body
+        className={cn(
+          jetBrains.className,
+          merriweather.variable,
+          nunito.variable,
+        )}
+      >
         <Noise />
         <div className="relative bg-neutral-950 text-base antialiased">
           <Header />

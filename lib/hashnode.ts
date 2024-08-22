@@ -1,7 +1,7 @@
 import client from "./apollo-client";
 import { GET_ARTICLE_BY_POST, GET_ARTICLES } from "./queries";
 
-export const Hashnode = {
+export const HashNode = {
   getArticles: async ({
     pageSize,
     page,

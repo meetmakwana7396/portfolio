@@ -3,7 +3,7 @@ import {
   ArticleContent,
   ArticleTitle,
 } from "@/components/article/article-card";
-import { Hashnode } from "@/lib/hashnode";
+import { HashNode } from "@/lib/hashnode";
 import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -14,7 +14,7 @@ export default async function ArticlePage({
 }: {
   searchParams: { page: number };
 }) {
-  const { data, loading, errors } = await Hashnode.getArticles({
+  const { data, loading, errors } = await HashNode.getArticles({
     page: Number(searchParams?.page) || 1,
     pageSize: 10,
   });
@@ -22,7 +22,7 @@ export default async function ArticlePage({
   const pageInfo = data?.publication?.postsViaPage?.pageInfo;
 
   return (
-    <section className="container  px-4 sm:px-0">
+    <section className="container px-4 sm:px-0">
       <h1 className="text-5xl font-bold">Articles</h1>
       <div className="my-10 grid grid-cols-1 gap-4">
         {postsArray?.map((post: any) => (

@@ -1,4 +1,4 @@
-import { Hashnode } from "@/lib/hashnode";
+import { HashNode } from "@/lib/hashnode";
 import {
   ArticleCard,
   ArticleContent,
@@ -7,7 +7,7 @@ import {
 import Link from "next/link";
 
 export default async function ArticleSection() {
-  const { data, loading, errors } = await Hashnode.getArticles({
+  const { data, loading, errors } = await HashNode.getArticles({
     page: 1,
     pageSize: 6,
   });

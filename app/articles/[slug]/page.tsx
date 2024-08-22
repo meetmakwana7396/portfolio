@@ -1,4 +1,4 @@
-import { Hashnode } from "@/lib/hashnode";
+import { HashNode } from "@/lib/hashnode";
 import React from "react";
 import Image from "next/image";
 
@@ -7,7 +7,7 @@ export default async function SingleArticlePage({
 }: {
   params: { slug: string };
 }) {
-  const { data, errors } = await Hashnode.getArticleBySlug(params.slug);
+  const { data, errors } = await HashNode.getArticleBySlug(params.slug);
 
   const tags = data.publication.post.tags;
   return (

@@ -6,6 +6,13 @@
   @apply bg-blue-300/10;
 }
 
+@layer utilities {
+  #skills-table td,
+  #skills-table th {
+    @apply py-4;
+  }
+}
+
 @layer base {
   * {
     @apply scroll-mt-24 scroll-smooth text-neutral-300;
