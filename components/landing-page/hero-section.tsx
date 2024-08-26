@@ -24,17 +24,23 @@ const HeroSection = () => {
           <Link
             href="https://github.com/meetmakwana7396"
             className="blue-underline"
+            target="_blank"
           >
             <span>Github</span>
           </Link>
           {" / "}
-          <Link href="https://x.com/meetmakwna" className="blue-underline">
+          <Link
+            href="https://x.com/meetmakwna"
+            className="blue-underline"
+            target="_blank"
+          >
             <span>Twitter</span>
           </Link>
           {" / "}
           <Link
             href="https://www.linkedin.com/in/meet-makwana-33458921b/"
             className="blue-underline"
+            target="_blank"
           >
             <span>Linkedin</span>
           </Link>
