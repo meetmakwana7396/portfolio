@@ -39,6 +39,12 @@ export const GET_ARTICLE_BY_POST = gql`
         id
         title
         subtitle
+        author {
+          id
+          name
+          username
+          profilePicture
+        }
         tags {
           id
           name
@@ -50,6 +56,7 @@ export const GET_ARTICLE_BY_POST = gql`
         content {
           markdown
           html
+          text
         }
       }
     }

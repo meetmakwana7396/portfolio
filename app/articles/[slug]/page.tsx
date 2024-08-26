@@ -2,45 +2,43 @@ import { HashNode } from "@/lib/hashnode";
 import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
 
-// export async function generateMetadata(
-//   {params: { slug: string }}
-//   parent: ResolvingMetadata,
-// ): Promise<Metadata> {
-//   // Fetch data for the article
-//   const article = await fetchArticle(params.id);
+export async function generateMetadata(
+  { slug }: { slug: string },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { data } = await HashNode.getArticleBySlug(slug);
 
-//   // Optionally access and extend parent metadata
-//   const previousImages = (await parent).openGraph?.images || [];
-
-//   return {
-//     title: article.title,
-//     description: article.summary,
-//     keywords: article.tags.join(", "),
-//     authors: [{ name: article.author }],
-//     openGraph: {
-//       title: article.title,
-//       description: article.summary,
-//       type: "article",
-//       publishedTime: article.publishDate,
-//       authors: [article.author],
-//       images: [
-//         {
-//           url: article.featuredImage,
-//           width: 1200,
-//           height: 630,
-//           alt: article.title,
-//         },
-//         ...previousImages,
-//       ],
-//     },
-//     twitter: {
-//       card: "summary_large_image",
-//       title: article.title,
-//       description: article.summary,
-//       images: [article.featuredImage],
-//     },
-//   };
-// }
+  const previousImages = (await parent).openGraph?.images || [];
+  const { post } = data.publication;
+  return {
+    title: post.title,
+    description: post.content.text,
+    keywords: post.tags.join(", "),
+    authors: [{ name: post.author.name }],
+    openGraph: {
+      title: post.title,
+      description: post?.subtitle || "",
+      type: "article",
+      publishedTime: post.publishDate,
+      authors: [post.author.name],
+      images: [
+        {
+          url: post?.coverImage?.url || "",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+        ...previousImages,
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post?.subtitle || "",
+      images: [post?.coverImage?.url || ""],
+    },
+  };
+}
 
 export default async function SingleArticlePage({
   params,
@@ -57,7 +55,7 @@ export default async function SingleArticlePage({
           {data.publication.post.title}
         </h1>
         <p className="px-4 text-xl font-thin italic text-neutral-400 sm:px-0">
-          {data.publication.post.subtitle}
+          {data.publication.post?.subtitle || ""}
         </p>
         <div className="flex flex-wrap gap-2 px-4 sm:px-0">
           {tags.map((tag: { id: string; name: string; slug: string }) => (
