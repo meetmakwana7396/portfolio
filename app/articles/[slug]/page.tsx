@@ -3,13 +3,14 @@ import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateMetadata(
-  { slug }: { slug: string },
+  { params }: { params: { slug: string } },
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const { data } = await HashNode.getArticleBySlug(slug);
+  const { data } = await HashNode.getArticleBySlug(params.slug);
 
   const previousImages = (await parent).openGraph?.images || [];
   const { post } = data.publication;
+
   return {
     title: post.title,
     description: post.content.text,
