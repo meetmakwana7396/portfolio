@@ -8,7 +8,7 @@ export default function MyAvatar({ className }: { className?: string }) {
         "size-14 my-auto ring-[6px] ring-neutral-500/40",
         className
       )}>
-      <AvatarImage src="https://avatars.githubusercontent.com/u/77795036?v=4" />
+      <AvatarImage src="https://avatars.githubusercontent.com/u/77795036?v=4" alt="MM" title="MM" />
       <AvatarFallback>MM</AvatarFallback>
     </Avatar>
   );

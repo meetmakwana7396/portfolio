@@ -1,6 +1,46 @@
 import { HashNode } from "@/lib/hashnode";
 import React from "react";
-import Image from "next/image";
+import { Metadata, ResolvingMetadata } from "next";
+
+// export async function generateMetadata(
+//   {params: { slug: string }}
+//   parent: ResolvingMetadata,
+// ): Promise<Metadata> {
+//   // Fetch data for the article
+//   const article = await fetchArticle(params.id);
+
+//   // Optionally access and extend parent metadata
+//   const previousImages = (await parent).openGraph?.images || [];
+
+//   return {
+//     title: article.title,
+//     description: article.summary,
+//     keywords: article.tags.join(", "),
+//     authors: [{ name: article.author }],
+//     openGraph: {
+//       title: article.title,
+//       description: article.summary,
+//       type: "article",
+//       publishedTime: article.publishDate,
+//       authors: [article.author],
+//       images: [
+//         {
+//           url: article.featuredImage,
+//           width: 1200,
+//           height: 630,
+//           alt: article.title,
+//         },
+//         ...previousImages,
+//       ],
+//     },
+//     twitter: {
+//       card: "summary_large_image",
+//       title: article.title,
+//       description: article.summary,
+//       images: [article.featuredImage],
+//     },
+//   };
+// }
 
 export default async function SingleArticlePage({
   params,
@@ -11,7 +51,7 @@ export default async function SingleArticlePage({
 
   const tags = data.publication.post.tags;
   return (
-    <section className="container ">
+    <section className="container">
       <div className="mb-10 flex flex-col gap-4">
         <h1 className="px-4 text-3xl font-extrabold leading-snug sm:px-0 sm:text-5xl">
           {data.publication.post.title}

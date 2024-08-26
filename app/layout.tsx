@@ -30,6 +30,19 @@ export const metadata: Metadata = {
   title: "Meet Makwana",
   description:
     "Frontend developer who loves creating simple and minimalistic designs.",
+  referrer: "origin-when-cross-origin",
+  metadataBase: new URL("https://www.msquare.vercel.app"),
+  alternates: {
+    canonical: "./",
+  },
+  keywords: [
+    "Experienced Frontend Engineer",
+    "Frontend Developer Portfolio",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "JavaScript",
+  ],
   openGraph: {
     title: "Meet Makwana",
     description: "Experienced Frontend Engineer",
@@ -37,6 +50,11 @@ export const metadata: Metadata = {
     siteName: "Meet Makwana",
     locale: "en_US",
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
   },
 };
 
@@ -61,6 +79,7 @@ export default function RootLayout({
           <div className="pointer-events-none absolute left-1/2 top-0 w-full -translate-x-1/2 transform sm:max-w-6xl">
             <Image
               src="/aurora2.png"
+              title="Aurora Lights"
               alt="lights"
               width={1000}
               height={1000}
