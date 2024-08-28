@@ -2,6 +2,19 @@ import { HashNode } from "@/lib/hashnode";
 import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
 
+const createOgImage = () => {
+  return (
+    [
+      // prefix: <domain/yourCloudinaryId/file_type/source_type>
+      `https://res.cloudinary.com/dadvcbbrh/image/upload/v1724866352/huwq3h2ixp3pp2nds0se.jpg`,
+      // transform composed image: width, height, quality
+      `w_1024,h_600,q_100`,
+     
+    ].join("/")
+  )
+}
+
+
 export async function generateMetadata(
   { params }: { params: { slug: string } },
   parent: ResolvingMetadata,
