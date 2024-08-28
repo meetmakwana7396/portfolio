@@ -2,17 +2,18 @@ import { HashNode } from "@/lib/hashnode";
 import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
 
-const createOgImage = () => {
-  return (
-    [
-      // prefix: <domain/yourCloudinaryId/file_type/source_type>
-      `https://res.cloudinary.com/dadvcbbrh/image/upload/v1724866352/huwq3h2ixp3pp2nds0se.jpg`,
-      // transform composed image: width, height, quality
-      `w_1024,h_600,q_100`,     
-    ].join("/")
-  )
-}
-
+const createOgImage = (title: string) => {
+  return [
+    // prefix: <domain/yourCloudinaryId/file_type/source_type>
+    `https://res.cloudinary.com/dadvcbbrh/image/upload`,
+    // transform composed image: width, height, quality
+    "w_1024,h_600",
+    `co_white,c_fit,l_text:Roboto_48_style_normal_align_left:${title},w_1024,h_600`,
+    "fl_layer_apply,fl_no_overflow,g_south_west,y_50,x_40",
+    `${process.env.NEXT_PUBLIC_CLOUDINARY_ID}`,
+    "bg-grain.jpg",
+  ].join("/");
+};
 
 export async function generateMetadata(
   { params }: { params: { slug: string } },
@@ -82,6 +83,7 @@ export default async function SingleArticlePage({
           ))}
         </div>
       </div>
+      <div className="">{createOgImage(data.publication.post.title)}</div>
       <div
         className="prose mb-20 px-4 sm:px-0"
         dangerouslySetInnerHTML={{
