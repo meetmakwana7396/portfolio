@@ -83,7 +83,7 @@ export default async function SingleArticlePage({
           ))}
         </div>
       </div>
-      <div className="">{createOgImage(data.publication.post.title)}</div>
+      {/* <div className="">{createOgImage(data.publication.post.title)}</div> */}
       <div
         className="prose mb-20 px-4 sm:px-0"
         dangerouslySetInnerHTML={{
