@@ -2,13 +2,13 @@ import { HashNode } from "@/lib/hashnode";
 import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
 
-const createOgImage = (title: string) => {
+const createOgImage = (title: string, height?: string, width?: string) => {
   return [
     // prefix: <domain/yourCloudinaryId/file_type/source_type>
     `https://res.cloudinary.com/dadvcbbrh/image/upload`,
     // transform composed image: width, height, quality
-    "w_1400,h_640",
-    `co_white,c_fit,l_text:Roboto_72_style_bold_align_left_letter_spacing_0:${title},w_1400,h_640`,
+    `w_${width || "1400"},h_${height || "640"}`,
+    `co_white,c_fit,l_text:Roboto_72_style_bold_align_left_letter_spacing_0:${title},w_${width || "1400"},h_${height || "640"}`,
     "fl_layer_apply,fl_no_overflow,g_south_west,y_100,x_60",
     `${process.env.NEXT_PUBLIC_CLOUDINARY_ID}`,
     "bg-grain.jpg",
@@ -37,9 +37,9 @@ export async function generateMetadata(
       authors: [post.author.name],
       images: [
         {
-          url: createOgImage(post?.title) || "",
-          width: 1200,
-          height: 630,
+          url: createOgImage(post?.title, "157", "300") || "",
+          width: 300,
+          height: 157,
           alt: post.title,
         },
         ...previousImages,
@@ -49,7 +49,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       title: post.title,
       description: post?.subtitle || "",
-      images: [createOgImage(post?.title) || ""],
+      images: [createOgImage(post?.title, "157", "300") || ""],
     },
   };
 }
