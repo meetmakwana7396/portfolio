@@ -7,9 +7,9 @@ const createOgImage = (title: string) => {
     // prefix: <domain/yourCloudinaryId/file_type/source_type>
     `https://res.cloudinary.com/dadvcbbrh/image/upload`,
     // transform composed image: width, height, quality
-    "w_1024,h_600",
-    `co_white,c_fit,l_text:Roboto_48_style_normal_align_left:${title},w_1024,h_600`,
-    "fl_layer_apply,fl_no_overflow,g_south_west,y_50,x_40",
+    "w_1400,h_640",
+    `co_white,c_fit,l_text:Roboto_72_style_bold_align_left_letter_spacing_0:${title},w_1400,h_640`,
+    "fl_layer_apply,fl_no_overflow,g_south_west,y_100,x_60",
     `${process.env.NEXT_PUBLIC_CLOUDINARY_ID}`,
     "bg-grain.jpg",
   ].join("/");
@@ -37,7 +37,7 @@ export async function generateMetadata(
       authors: [post.author.name],
       images: [
         {
-          url: post?.coverImage?.url || "",
+          url: createOgImage(post.title) || "",
           width: 1200,
           height: 630,
           alt: post.title,
