@@ -29,7 +29,7 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "Meet Makwana",
   description:
-    "Frontend developer who loves creating simple and minimalistic designs.",
+    "Experienced Frontend Engineer.",
   referrer: "origin-when-cross-origin",
   metadataBase: new URL("https://www.msquare.vercel.app"),
   alternates: {
