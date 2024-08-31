@@ -7,7 +7,7 @@ const createOgImage = (title: string, height?: string, width?: string) => {
     // prefix: <domain/yourCloudinaryId/file_type/source_type>
     `https://res.cloudinary.com/dadvcbbrh/image/upload`,
     // transform composed image: width, height, quality
-    `w_${width || "1400"},h_${height || "640"}`,
+    `w_${width || "1400"},h_${height || "800"}`,
     `co_white,c_fit,l_text:Roboto_72_style_bold_align_left_letter_spacing_0:${title},w_${width || "1400"},h_${height || "640"}`,
     "fl_layer_apply,fl_no_overflow,g_south_west,y_100,x_60",
     `${process.env.NEXT_PUBLIC_CLOUDINARY_ID}`,
@@ -39,7 +39,7 @@ export async function generateMetadata(
         {
           url: createOgImage(post?.title) || "",
           width: 1400,
-          height: 640,
+          height: 900,
           alt: post.title,
         },
         ...previousImages,
