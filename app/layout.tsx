@@ -28,8 +28,7 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: "Meet Makwana",
-  description:
-    "Experienced Frontend Engineer.",
+  description: "Experienced Frontend Engineer.",
   referrer: "origin-when-cross-origin",
   metadataBase: new URL("https://www.msquare.vercel.app"),
   alternates: {
@@ -65,13 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          jetBrains.className,
-          merriweather.variable,
-          nunito.variable,
-        )}
-      >
+      <body className={cn(jetBrains.className)}>
         <Noise />
         <div className="relative bg-neutral-950 text-base antialiased">
           <Header />
