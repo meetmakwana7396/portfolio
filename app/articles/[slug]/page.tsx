@@ -37,9 +37,9 @@ export async function generateMetadata(
       authors: [post.author.name],
       images: [
         {
-          url: createOgImage(post?.title, "157", "300") || "",
-          width: 300,
-          height: 157,
+          url: createOgImage(post?.title) || "",
+          width: 1400,
+          height: 640,
           alt: post.title,
         },
         ...previousImages,
