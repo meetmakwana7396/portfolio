@@ -40,7 +40,7 @@ export async function generateMetadata(
       authors: [post.author.name],
       images: [
         {
-          url: createOgImage(post?.title) || "",
+          url: post?.coverImage?.url || createOgImage(post?.title) || "",
           width: 1400,
           height: 900,
           alt: post.title,
@@ -52,7 +52,9 @@ export async function generateMetadata(
       card: "summary_large_image",
       title: post.title,
       description: post?.subtitle || "",
-      images: [createOgImage(post?.title, "157", "300") || ""],
+      images: [
+        post?.coverImage?.url || createOgImage(post?.title, "157", "300") || "",
+      ],
     },
   };
 }
