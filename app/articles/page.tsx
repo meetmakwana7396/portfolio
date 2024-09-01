@@ -5,7 +5,7 @@ import {
 } from "@/components/article/article-card";
 import { HashNode } from "@/lib/hashnode";
 import { cn } from "@/lib/utils";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
 import React from "react";
 
@@ -14,6 +14,8 @@ export default async function ArticlePage({
 }: {
   searchParams: { page: number };
 }) {
+  noStore();
+
   const { data, loading, errors } = await HashNode.getArticles({
     page: Number(searchParams?.page) || 1,
     pageSize: 10,

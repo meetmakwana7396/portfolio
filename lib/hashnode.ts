@@ -17,6 +17,7 @@ export const HashNode = {
           pageSize: pageSize || 6,
           page: page || 1,
         },
+        fetchPolicy: "no-cache",
       });
       return response;
     } catch (error) {
@@ -33,6 +34,7 @@ export const HashNode = {
           host: process.env.NEXT_PUBLIC_HASHNODE_HOST!,
           slug,
         },
+        fetchPolicy: "no-cache",
       });
       return response;
     } catch (error) {

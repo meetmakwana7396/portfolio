@@ -1,6 +1,7 @@
 import { HashNode } from "@/lib/hashnode";
 import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
+import { unstable_noStore as noStore } from "next/cache";
 
 const createOgImage = (title: string, height?: string, width?: string) => {
   return [
@@ -19,6 +20,8 @@ export async function generateMetadata(
   { params }: { params: { slug: string } },
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
+  noStore();
+
   const { data } = await HashNode.getArticleBySlug(params.slug);
 
   const previousImages = (await parent).openGraph?.images || [];

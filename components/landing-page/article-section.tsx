@@ -5,8 +5,10 @@ import {
   ArticleTitle,
 } from "../article/article-card";
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function ArticleSection() {
+  noStore();
   const { data, loading, errors } = await HashNode.getArticles({
     page: 1,
     pageSize: 6,
@@ -14,7 +16,7 @@ export default async function ArticleSection() {
   const postsArray = data?.publication?.postsViaPage?.nodes;
 
   return (
-    <section id="articles" className="space-y-6 max-w-4xl mx-auto px-4 sm:px-0">
+    <section id="articles" className="mx-auto max-w-4xl space-y-6 px-4 sm:px-0">
       {/* <h2 className="text-2xl flex gap-3 items-center font-semibold">
         <BookOpen className="size-8" /> Articles
       </h2> */}
@@ -23,10 +25,11 @@ export default async function ArticleSection() {
           <ArticleCard
             coverImageUrl={post?.coverImage?.url}
             slug={post?.slug}
-            key={post?.id}>
+            key={post?.id}
+          >
             <ArticleTitle>{post?.title}</ArticleTitle>
             <ArticleContent>
-              <p className="text-neutral-400 line-clamp-3">{post?.brief}</p>
+              <p className="line-clamp-3 text-neutral-400">{post?.brief}</p>
             </ArticleContent>
           </ArticleCard>
         ))}
