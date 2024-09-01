@@ -7,10 +7,18 @@ export default function TechnologySection() {
       <table id="skills-table">
         <tbody>
           <tr className="py-4 align-top">
-            <td>Frontend:</td>
+            <td>Languages:</td>
             <td className="ps-6">
-              Typescript, Javascript, React, Next, Radix, Tailwind, Bootstrap,
-              Redux, Zhustand
+              C/C++, Typescript, Javascript, HTML, CSS, Python, JAVA, SQL,
+              GraphQL
+            </td>
+          </tr>
+          <tr className="py-4 align-top">
+            <td>Frameworks/Libraries:</td>
+            <td className="ps-6">
+              React.js, Next.js, Radix, Shadcn UI, SWR, Tailwind CSS, Bootstrap,
+              Redux, Zhustand, Styled Components, Jest, React Testing
+              Library (RTL), Green Sock Animation Platform (GSAP).
             </td>
           </tr>
           <tr className="py-4 align-top">
@@ -19,20 +27,18 @@ export default function TechnologySection() {
           </tr>
           <tr className="py-4 align-top">
             <td>Database:</td>
-            <td className="ps-6">
-              SQL, NoSQL, MySQL, MongoDB, Postgres, GraphQL
-            </td>
+            <td className="ps-6">MySQL, NoSQL, MongoDB, Postgres</td>
           </tr>
           <tr className="py-4 align-top">
             <td>Tools:</td>
             <td className="ps-6">
-              VS Code, Postman, phpMyAdmin, Git, Github, Notion
+              VS Code, Postman, phpMyAdmin, Git, Github, Notion, Vercel.
             </td>
           </tr>
           <tr className="py-4 align-top">
             <td>Operating System:</td>
             <td className="ps-6">
-              Fedora, Ubuntu, Any other linux distro, Windows
+              Manjaro, Fedora, Ubuntu, Any other linux distro, Windows
             </td>
           </tr>
         </tbody>
