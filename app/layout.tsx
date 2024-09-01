@@ -9,6 +9,7 @@ import Image from "next/image";
 import ScrollToTop from "@/components/landing-page/scroll-to-top";
 import { Analytics } from "@vercel/analytics/react";
 import GoogleAnalytics from "@/components/google-analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function RootLayout({
           <Footer />
           <Analytics />
           <GoogleAnalytics />
+          <SpeedInsights />
         </div>
       </body>
     </html>
