@@ -53,7 +53,7 @@ export async function generateMetadata(
       title: post.title,
       description: post?.subtitle || "",
       images: [
-        post?.coverImage?.url || createOgImage(post?.title, "157", "300") || "",
+        post?.coverImage?.url || createOgImage(post?.title, "157", "300"),
       ],
     },
   };

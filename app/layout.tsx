@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import Noise from "@/components/noise";
 import Image from "next/image";
 import ScrollToTop from "@/components/landing-page/scroll-to-top";
+import { Analytics } from "@vercel/analytics/react";
 
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
@@ -81,6 +82,7 @@ export default function RootLayout({
           </div>
           <div className="mt-16 sm:mt-24">{children}</div>
           <Footer />
+          <Analytics />
         </div>
       </body>
     </html>
