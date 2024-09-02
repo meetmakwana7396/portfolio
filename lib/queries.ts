@@ -11,9 +11,16 @@ export const GET_ARTICLES = gql`
           id
           title
           subtitle
+          views
           brief
           url
+          views
           slug
+          publishedAt
+          author {
+            name
+            location
+          }
           coverImage {
             url
           }

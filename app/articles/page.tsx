@@ -28,21 +28,9 @@ export default async function ArticlePage({
       <h1 className="text-5xl font-bold">Articles</h1>
       <div className="my-10 grid grid-cols-1 gap-4">
         {postsArray?.map((post: any) => (
-          <ArticleCard
-            coverImageUrl={post?.coverImage?.url}
-            slug={post?.slug}
-            key={post?.id}
-          >
-            <ArticleTitle>{post?.title}</ArticleTitle>
-            <ArticleContent>
-              <p className="line-clamp-3 font-light text-neutral-400">
-                {post?.brief}
-              </p>
-            </ArticleContent>
-          </ArticleCard>
+          <ArticleCard key={post?.id} article={post} />
         ))}
       </div>
-      {/* <pre>{JSON.stringify(pageInfo, null, 2)}</pre> */}
       <div className="mb-14 flex justify-between gap-8">
         <div>
           <Link

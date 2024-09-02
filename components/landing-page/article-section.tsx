@@ -17,21 +17,9 @@ export default async function ArticleSection() {
 
   return (
     <section id="articles" className="mx-auto max-w-4xl space-y-6 px-4 sm:px-0">
-      {/* <h2 className="text-2xl flex gap-3 items-center font-semibold">
-        <BookOpen className="size-8" /> Articles
-      </h2> */}
       <div className="grid grid-cols-1 space-y-8">
         {postsArray?.map((post: any) => (
-          <ArticleCard
-            coverImageUrl={post?.coverImage?.url}
-            slug={post?.slug}
-            key={post?.id}
-          >
-            <ArticleTitle>{post?.title}</ArticleTitle>
-            <ArticleContent>
-              <p className="line-clamp-3 text-neutral-400">{post?.brief}</p>
-            </ArticleContent>
-          </ArticleCard>
+          <ArticleCard key={post?.id} article={post} />
         ))}
       </div>
       <div className="text-left">
