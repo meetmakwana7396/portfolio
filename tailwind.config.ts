@@ -94,6 +94,9 @@ const config = {
             strong: {
               color: "white",
             },
+            mark: {
+              color: "black",
+            },
             code: {
               backgroundColor: "rgba(229 229 229 / 0.1)",
               padding: "2px",
