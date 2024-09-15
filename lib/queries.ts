@@ -17,6 +17,7 @@ export const GET_ARTICLES = gql`
           views
           slug
           publishedAt
+          updatedAt
           author {
             name
             location
@@ -64,6 +65,38 @@ export const GET_ARTICLE_BY_POST = gql`
           markdown
           html
           text
+        }
+      }
+    }
+  }
+`;
+
+export const GET_ARTICLE_BY_POINTER = gql`
+  query Publication($host: String, $first: Int!) {
+    publication(host: $host) {
+      id
+      isTeam
+      title
+      posts(first: $first) {
+        edges {
+          node {
+            id
+            title
+            subtitle
+            views
+            brief
+            url
+            slug
+            publishedAt
+            updatedAt
+            author {
+              name
+              location
+            }
+            coverImage {
+              url
+            }
+          }
         }
       }
     }
