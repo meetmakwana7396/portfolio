@@ -84,6 +84,10 @@ export const GET_ARTICLE_BY_POINTER = gql`
             title
             subtitle
             views
+            tags {
+              id
+              name
+            }
             brief
             url
             slug
