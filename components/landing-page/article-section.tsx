@@ -22,7 +22,7 @@ export default async function ArticleSection() {
           <ArticleCard key={post?.id} article={post} />
         ))}
       </div>
-      <div className="text-left">
+      <div className="text-left sm:text-base text-sm">
         <Link href="/articles" className="blue-underline">
           View More
         </Link>

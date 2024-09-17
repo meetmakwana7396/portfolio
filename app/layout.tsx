@@ -16,18 +16,6 @@ const jetBrains = JetBrains_Mono({
   variable: "--font-jet-brains",
   display: "swap",
 });
-const nunito = Nunito({
-  subsets: ["latin"],
-  variable: "--font-nunito",
-  display: "swap",
-});
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  style: ["italic", "normal"],
-  weight: ["300", "400", "700", "900"],
-  variable: "--font-merriweather",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Meet Makwana",
@@ -72,6 +60,7 @@ export default function RootLayout({
         <div className="relative bg-neutral-950 text-base antialiased">
           <Header />
           <ScrollToTop />
+          {/* <div className="absolute top-0 h-80 w-full bg-gradient-to-b from-blue-800/40 via-cyan-800/40 to-transparent z-0"></div> */}
           <div className="pointer-events-none absolute left-1/2 top-0 w-full -translate-x-1/2 transform sm:max-w-6xl">
             <Image
               src="/aurora2.png"
@@ -82,7 +71,7 @@ export default function RootLayout({
               className="h-fit w-full object-contain opacity-40"
             />
           </div>
-          <div className="mt-16 sm:mt-24">{children}</div>
+          <div className="mt-6 sm:mt-24">{children}</div>
           <Footer />
           <Analytics />
           <GoogleAnalytics />

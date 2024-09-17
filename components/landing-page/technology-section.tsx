@@ -5,7 +5,7 @@ export default function TechnologySection() {
       className="mx-auto mt-20 max-w-4xl space-y-6 px-4 sm:px-0"
     >
       <table id="skills-table">
-        <tbody>
+        <tbody className="text-sm sm:text-base">
           <tr className="py-4 align-top">
             <td>Languages:</td>
             <td className="ps-6">
@@ -17,8 +17,8 @@ export default function TechnologySection() {
             <td>Frameworks/Libraries:</td>
             <td className="ps-6">
               React.js, Next.js, Radix, Shadcn UI, SWR, Tailwind CSS, Bootstrap,
-              Redux, Zhustand, Styled Components, Jest, React Testing
-              Library (RTL), Green Sock Animation Platform (GSAP).
+              Redux, Zhustand, Styled Components, Jest, React Testing Library
+              (RTL), Green Sock Animation Platform (GSAP).
             </td>
           </tr>
           <tr className="py-4 align-top">
