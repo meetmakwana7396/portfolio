@@ -4,12 +4,10 @@ import TechnologySection from "@/components/landing-page/technology-section";
 
 export default async function Home() {
   return (
-    <div className="container ">
+    <div className="container space-y-12">
       <HeroSection />
-      <div className="space-y-16">
-        <TechnologySection />
-        <ArticleSection />
-      </div>
+      <TechnologySection />
+      <ArticleSection />
     </div>
   );
 }

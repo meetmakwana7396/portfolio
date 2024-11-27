@@ -15,15 +15,16 @@
 
 @layer base {
   * {
-    @apply scroll-mt-24 scroll-smooth text-neutral-300;
+    @apply scroll-mt-24 scroll-smooth text-neutral-50/70;
   }
   body {
     @apply bg-black;
   }
 
   .blue-underline {
-    @apply underline decoration-blue-500 decoration-2 underline-offset-4 hover:decoration-blue-700;
+    @apply  opacity-50 hover:opacity-100 transition-all;
   }
+
 }
 
 @layer components {

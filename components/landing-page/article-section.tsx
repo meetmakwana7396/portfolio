@@ -17,12 +17,14 @@ export default async function ArticleSection() {
 
   return (
     <section id="articles" className="mx-auto max-w-4xl space-y-6 px-4 sm:px-0">
+      <h1 className="font-jetBrains text-2xl opacity-50">{`* Recent Articles`}</h1>
+
       <div className="grid grid-cols-1 space-y-8">
         {postsArray?.map((post: any) => (
           <ArticleCard key={post?.id} article={post} />
         ))}
       </div>
-      <div className="text-left sm:text-base text-sm">
+      <div className="text-left text-sm sm:text-base">
         <Link href="/articles" className="blue-underline">
           View More
         </Link>

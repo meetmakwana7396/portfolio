@@ -73,7 +73,7 @@ export default async function SingleArticlePage({
         <h1 className="px-4 text-3xl font-extrabold leading-snug sm:px-0 sm:text-5xl">
           {data.publication.post.title}
         </h1>
-        <p className="px-4 text-xl font-thin italic text-neutral-400 sm:px-0">
+        <p className="px-4 text-xl italic text-neutral-400 sm:px-0">
           {data.publication.post?.subtitle || ""}
         </p>
         <div className="flex flex-wrap gap-2 px-4 sm:px-0">

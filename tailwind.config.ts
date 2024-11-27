@@ -29,20 +29,19 @@ const config = {
               },
             },
             p: {
-              color: "white",
-              fontFamily: "var(--font-jetbrains)",
-              fontWeight: "100",
+              color: "rgba(255,255,255,0.8)",
+              fontWeight: "300",
               "@screen sm": {
                 fontSize: "16px", // Adjust as needed
               },
               "@screen md": {
-                fontSize: "16px", // Adjust as neede
+                fontSize: "18px", // Adjust as neede
               },
             },
             h1: {
               fontSize: "36px",
               lineHeight: "40px",
-              color: "white",
+              color: "rgba(255,255,255,0.8)",
               "@screen sm": {
                 fontSize: "24px", // Adjust as needed
                 lineHeight: "28px",
@@ -55,7 +54,7 @@ const config = {
             h2: {
               fontSize: "30px",
               lineHeight: "36px",
-              color: "white",
+              color: "rgba(255,255,255,0.8)",
               "@screen sm": {
                 fontSize: "22px", // Adjust as needed
                 lineHeight: "26px",
@@ -68,7 +67,7 @@ const config = {
             h3: {
               fontSize: "24px",
               lineHeight: "32px",
-              color: "white",
+              color: "rgba(255,255,255,0.8)",
               "@screen sm": {
                 fontSize: "18px", // Adjust as needed
                 lineHeight: "22px",
@@ -81,7 +80,7 @@ const config = {
             h4: {
               fontSize: "20px",
               lineHeight: "28px",
-              color: "white",
+              color: "rgba(255,255,255,0.8)",
               "@screen sm": {
                 fontSize: "16px", // Adjust as needed
                 lineHeight: "20px",
@@ -92,7 +91,7 @@ const config = {
               },
             },
             strong: {
-              color: "white",
+              color: "rgba(255,255,255,0.8)",
             },
             mark: {
               color: "black",
@@ -108,8 +107,8 @@ const config = {
       },
 
       fontFamily: {
-        sans: ["var(--font-merriweather)"],
         jetBrains: ["var(--font-jet-brains)"],
+        inter: ["var(--inter)"],
       },
       borderRadius: {
         lg: "var(--radius)",

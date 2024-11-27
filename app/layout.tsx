@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Merriweather, Nunito } from "next/font/google";
+import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
@@ -14,6 +14,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const jetBrains = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jet-brains",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--inter",
   display: "swap",
 });
 
@@ -55,9 +61,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(jetBrains.className)}>
+      <body className={cn(inter.className, jetBrains.variable)}>
         <Noise />
-        <div className="relative bg-neutral-950 text-base antialiased">
+        <div className="relative bg-neutral-950 text-rose-500 antialiased">
           <Header />
           <ScrollToTop />
           {/* <div className="absolute top-0 h-80 w-full bg-gradient-to-b from-blue-800/40 via-cyan-800/40 to-transparent z-0"></div> */}
