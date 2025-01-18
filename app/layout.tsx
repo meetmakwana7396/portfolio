@@ -60,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ colorScheme: "dark" }}>
       <body className={cn(inter.className, jetBrains.variable)}>
         <Noise />
         <div className="relative bg-neutral-950 text-rose-500 antialiased">
