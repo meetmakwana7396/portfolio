@@ -1,0 +1,91 @@
+---
+title: "Shadcn Just Launched New CLI: A Major Update for 2024"
+publishedAt: "2024-09-01"
+summary: "Shadcn Just Launched New CLI: A Major Update for 2024"
+tags: "frontend development, reactjs, nextjs, UI, CLI" 
+---
+
+Shadcn has just rolled out a new CLI, and it's a game-changer for developers working with modern React frameworks. This update isn't just a minor tweak; it’s a complete rewrite with numerous new features and enhancements that will make building your next project faster and more efficient. In this post, we'll explore the major highlights of this new release and how you can use it to streamline your development workflow.
+
+## What's New in the Shadcn CLI?
+
+The ShadcnUI CLI has been reimagined to cater to the growing needs of developers, bringing in a host of new capabilities:
+
+1. **Broad Framework Support**:  
+   The CLI now natively supports all major React frameworks, including Next.js, Remix, Vite, and Laravel. Whether you’re starting a new project or integrating ShadcnUI into an existing one, the CLI makes the setup process smoother than ever.
+2. **Improved Initialization**:  
+   The new `npx shadcn init` command has been supercharged with framework detection and can even initialize a brand-new Next.js app with a single command. This means you can get up and running with ShadcnUI without the usual setup hassle. Check out the below image
+
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725195197005/9c9b66ec-5c8c-4326-a09c-3e3c9e5fad81.png align="center")
+
+   The new feature is that when you run the `init` command, it first asks you to create a new Next.js project. As shown in the screenshot, it says "Updating `tailwind.config.ts`" instead of "Writing." This is a major improvement. Previously, adding Shadcn UI to an existing app would rewrite the `tailwind.config.ts` and global.css files, causing you to lose your custom styles. With this update, you no longer have to worry about losing your styles.
+
+3. **Component-Specific Dependencies**:  
+   Components now ship with their own dependencies. For example, the Accordion component includes its own Tailwind keyframes. When you add it to your project, the CLI automatically updates your `tailwind.config.ts` file, ensuring everything works well.
+4. **Remote Component Installation**:  
+   With this update, you can install remote components directly using URLs. For instance, you can add a navbar component with a simple command:
+
+   ```bash
+   npx shadcn add https://acme.com/registry/navbar.json
+   ```
+
+   This feature allows for greater flexibility, enabling you to integrate third-party components or even your private components easily.
+
+   Also, We can now install blocks that are pre-made by shadcn with the new CLI.  
+   Look at the example below:
+
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725195889947/cf164297-f114-43f5-8a35-29ef9e9b91a7.png align="center")
+
+   See it?
+
+   It automatically creates the page for the dashboard and also installs the required dependencies, which include components, hooks, and libs, to make the installed blocks (i.e., sidebar, dashboard) work smoothly.
+
+   Here's how the Dashboard and Sidebar look after installation:
+
+   ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1725196123746/eda7205b-ff77-4535-a0b2-7047e14854c0.png align="center")
+
+   I actually felt so good seeing it work insanely smoothly😭, now i won't have to spend time setting up basic structure like this when new idea pops in my mind.
+
+5. **Enhanced Error Handling and Monorepo Support**:  
+   The new CLI comes with better error handling, making debugging less painful. Additionally, it now supports monorepo setups, which is great for large-scale projects with multiple packages.
+
+## Updating Your Project with the New CLI
+
+To update an existing project to use the new ShadcnUI CLI, you'll need to adjust your `components.json` file to include import aliases for your components, utilities, UI elements, libraries, and hooks. Here’s an example configuration:
+
+```json
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "tailwind": {
+    // Custom Tailwind configuration
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  }
+}
+```
+
+If your project uses a different import alias prefix, simply replace `@` with your desired prefix.
+
+## Create and Distribute Your Own Component Registry
+
+One of the most exciting additions is the new schema that lets you ship your own component registry. With URL support, this feature allows you to distribute private components within your organization or for specific clients, adding a whole new level of customization and control.
+
+## Why This Update Matters
+
+This new CLI is more than just a tool; it’s a complete toolkit designed to make component integration and project setup faster, easier, and more customizable. By updating your workflow with the ShadcnUI CLI, you’ll benefit from a more efficient development process, keeping your projects up to date with the latest UI trends.
+
+## Try It Out Today!
+
+The new Shadcn CLI is available now. Whether you’re starting a new project or updating an existing one, these new features are sure to boost your productivity and enhance your development experience. To get started, run:
+
+```bash
+npx shadcn init
+```
+
+Happy coding!👾

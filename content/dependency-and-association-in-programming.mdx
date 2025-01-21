@@ -1,0 +1,107 @@
+---
+title: "Dependency and Association in Programming"
+publishedAt: "2024-08-14"
+summary: "Dependency and Association in Programming"
+tags: "OOP, ProgrammingConcepts"
+---
+
+Hello folks, I hope yall are doing great!
+
+So recently, I’ve been reading a book about design patterns, The book started with OOP concepts to get us on track and then explained some other simple yet important concepts like these.
+
+We all have heard the term “dependency” while learning, coding, etc. but do we actually know what it really means? how it affects our code? to be honest, i didn’t know, probably because, without realizing it, i’ve been learning things using [Black Box Method](https://ismailouahbi.medium.com/black-box-thinking-learn-hard-things-a850bfb2dc94).
+
+Anyways, now that we have sparked the question, Let’s understand what dependency and association is.
+
+## What Is Dependency?
+
+Dependency is the most basic and the weakest type of relations between classes. We can say that there is dependancy between two classes, if changes in one class’s definition might cause us modifications to the another class.
+
+### Example:
+
+Let’s say we have two classes: `OrderService` and `PaymentProcessor`. The `OrderService` depends on the `PaymentProcessor` class to complete an order.
+
+```typescript
+class PaymentProcessor {
+  processPayment(amount: number) {
+    console.log(`Processing payment of ₹${amount}`);
+  }
+}
+
+class OrderService {
+  constructor(private paymentProcessor: PaymentProcessor) {}
+
+  placeOrder(amount: number) {
+    console.log("Order placed successfully.");
+    this.paymentProcessor.processPayment(amount);
+  }
+}
+
+const paymentProcessor = new PaymentProcessor();
+const orderService = new OrderService(paymentProcessor);
+orderService.placeOrder(1000);
+```
+
+Here, the `OrderService` is **dependent** on `PaymentProcessor`. If the way payment processing changes (e.g., adding PayPal support), the `OrderService` will need adjustments.
+
+I hope you have gotten idea what i’m trying to say!
+
+Now let’s move to Association.
+
+## What Is Association?
+
+Association is a relationship in which one object uses or inter-acts with another. In an association, one class knows about another class and interacts with it, but neither class owns the other.
+
+### Example:
+
+Consider a system where an `Author` and a `Book` are associated. An author can write multiple books, and a book can have multiple authors.
+
+```typescript
+class Author {
+  constructor(public name: string) {}
+}
+
+class Book {
+  constructor(
+    public title: string,
+    public authors: Author[],
+  ) {}
+}
+
+const author1 = new Author("J.K. Rowling");
+const author2 = new Author("Stephen King");
+
+const book = new Book("Fiction Masterpieces", [author1, author2]);
+
+console.log(
+  `${book.title} is written by ${book.authors.map((a) => a.name).join(", ")}`,
+);
+```
+
+In this example, `Author` and `Book` classes are **associated** with each other. However, both can exist independently. removing an author or a book doesn't require removing the other. This shows that association is a more **loosely coupled** relationship than dependency.
+
+To solidify your understanding of the difference between association and dependency, let’s look at a combined example. Imagine that we have a `Professor` class:
+
+```typescript
+class Professor {
+  student: Student;
+
+  teach(c: Course): void {
+    this.student.remember(c.getKnowledge());
+  }
+}
+```
+
+In the `teach` method, we pass an instance of the `Course` class, which is then used within the method. If the `getKnowledge` method's signature changes (like renaming it or adding required parameters), the code will break. This shows that the `Professor` class **depends** on the `Course` class.
+
+Now, consider the `student` field and how it’s used in the `teach` method. Since the `Professor` relies on the `Student` class. if the `remember` method’s signature changes, the code will also break. we can say that the `Student` class is another **dependency**. However, because the `student` field is always available to any method in the `Professor` class, it’s not just a dependency but also an **association**.
+
+## Conclusion
+
+Understanding **dependency** and **association** is essential for designing maintainable and scalable systems. While dependency describes relationships with tighter coupling, association allows objects to interact with more independence. Balancing these relationships ensures your codebase remains modular, easier to manage, and ready to accommodate changes with minimal impact.
+
+By mastering these concepts, we can create architectures that are both **robust** and **flexible**, ensuring smoother project development and better long-term maintainability.
+
+If you enjoyed this content, don’t forget to share it with your peers and [**join our squad**](https://dly.to/Kao0W7X21gm) for more insights into the evolving world of web development. More exciting topics are coming your way!
+
+Happy Hacking!👾

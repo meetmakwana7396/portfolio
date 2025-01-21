@@ -1,0 +1,159 @@
+---
+title: "Brand New Hooks In React"
+publishedAt: "2024-09-08"
+summary: "Brand New Hooks In React"
+tags: "react, react hooks, forms, typescript, javascript"
+---
+
+In this article, we will be looking at new form hooks that were recently added in the React **Canary version**. What are these hooks? React introduced Three new hooks that is **useFormStatus**, **useActionState**, and **useOptimistic**. Let's understand them one by one.
+
+1. ## useFormStatus
+
+In React,When submitting the form, it's always the best practice to show the pending state while the form is being submitted. To do that, we often make use of a local state or a library like [React Hook Form](https://react-hook-form.com/).
+
+Well not anymore!
+
+**useFormStatus** gives you status information of the last form submission. Look at the below example to get the better idea!
+
+```typescript
+import { useFormStatus } from "react-dom";
+import action from './actions';
+
+function Submit() {
+  const status = useFormStatus();
+  return <button disabled={status.pending}>Submit</button>
+}
+
+export default function App() {
+  return (
+    <form action={action}>
+      <Submit />
+    </form>
+  );
+}
+```
+
+To get status information, the `Submit` component must be rendered within a `<form>`. Yes, to make use of the **useFormStatus** hook, you must create a child component where you want to access the data. The hook returns information like the pending property which tells you if the form is actively submitting.
+
+In the above example, Submit uses this information to disable `<button>` presses while the form is submitting.
+
+### Parameters
+
+useFormStatus does not take any parameters.
+
+### Returns
+
+A `status` object with the following properties:
+
+- **pending**: A boolean. If true, this means the parent `<form>` is pending submission. Otherwise, false.
+- **data**: The FormData of a form that is getting submitted. We can use this data too show more informative loading states, for example: Subscribing as username...
+- **method**: A string value of either 'get' or 'post'. This represents whether the parent `<form>` is submitting with either a **GET** or **POST** [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). By default, a `<form>` will use the **GET** method and can be specified by the [method](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#method) property.
+- **action**: A reference to the function passed to the action prop on the parent `<form>`. If there is no parent `<form>`, the property is null. If there is a URI value provided to the action prop, or no action prop specified, **status.action** will be null.
+
+### Limitations
+
+- The useFormStatus Hook must be called from a component that is rendered inside a `<form>`.
+- useFormStatus will only return status information for a parent `<form>`. It will not return status information for any `<form>` rendered in that same component or children components.
+
+2. ## useActionState
+
+useActionState is a Hook that allows you to update state based on the result of a form action.
+
+**Syntax**
+
+```typescript
+const [state, formAction] = useActionState(fn, initialState, permalink?);
+```
+
+Call **useActionState** at the top level of your component to create component state that is updated when a form action is invoked. You pass useActionState an existing form action function as well as an initial state, and it returns a new action that you use in your form, along with the latest form state. The latest form state is also passed to the function that you provided. See below example for better understanding!
+
+```typescript
+import { useActionState } from "react";
+
+async function increment(previousState, formData) {
+  return previousState + 1;
+}
+
+function StatefulForm({}) {
+  const [state, formAction] = useActionState(increment, 0);
+  return (
+    <form>
+      {state}
+      <button formAction={formAction}>Increment</button>
+    </form>
+  )
+}
+```
+
+Here, the state is the value returned by the action provided, that is increment. If the form is not submitted, then the state will return the initial value that we have provided. In the above example, 0 is our default state of form.
+
+If used with a Server Action, **useActionState** allows the server’s response from submitting the form to be shown even before hydration has completed.
+
+### Parameters
+
+- **fn**: Function to be called when form is submitted.
+- **initialState**: The value you want to assign to your form at intital state. This will be ignored when the function given as first parameter will be called
+- **optional permalink**: A string containing the unique page URL that this form modifies. For use on pages with dynamic content (eg: feeds) in conjunction with progressive enhancement: if `fn` is a [server action](https://react.dev/reference/rsc/use-server) and the form is submitted before the JavaScript bundle loads, the browser will navigate to the specified permalink URL, rather than the current page’s URL. Ensure that the same form component is rendered on the destination page (including the same action `fn` and `permalink`) so that React knows how to pass the state through. Once the form has been hydrated, this parameter has no effect.
+
+### Returns
+
+useActionState returns an array with exactly two values:
+
+1. The current state. During the first render, it will match the **initialState** you have passed. After the action is invoked, it will have the value returned by the action.
+2. A new action that you can pass as the action prop to your form component or `formAction` prop to any `button` component within the form.
+
+### Limitations
+
+- When used with a framework that supports React Server Components, useActionState lets you make forms interactive before JavaScript has executed on the client. When used without Server Components, it is equivalent to component local state.
+- The function passed to useActionState receives an extra argument, the previous or initial state, as its first argument. This makes its signature different than if it were used directly as a form action without using useActionState.
+
+In my opinion, this hook can potentially reduce the use of [React Hook Form](https://react-hook-form.com/) as it also supported in react server components.
+
+3. ## useOptimistic
+
+useOptimistic is a React Hook that lets you optimistically update the UI.
+
+### Syntax
+
+```typescript
+const [optimisticState, addOptimistic] = useOptimistic(state, updateFn);
+```
+
+useOptimistic is a React Hook that lets you show the different state while the async action is underway. It accepts a state and returns a copy of that state when the async operation is running. You provide a function that takes the current state and the input to the action, and returns the optimistic state to be used while the action is pending.
+
+This state is called the “optimistic” state because it is usually used to immediately present the user with the result of performing an action, even though the action actually takes time to complete.
+
+```typescript
+import { useOptimistic } from "react";
+
+function AppContainer() {
+  const [optimisticState, addOptimistic] = useOptimistic(
+    state,
+    // updateFn
+    (currentState, optimisticValue) => {
+      // merge and return new state
+      // with optimistic value
+    },
+  );
+}
+```
+
+### Parameters
+
+- **state**: the value to be returned initially, and after every action performed.
+- **updateFn(currentState, optimisticValue)**: a function that takes the current state and the optimistic value passed to addOptimistic and returns the resulting optimistic state. It must be a pure function. updateFn takes in two parameters. The **currentState** and the **optimisticValue**. then we will merge the currentState and the optimisticValue and return it.
+
+### Returns
+
+1. **optimisticState**: The resulting optimistic state that we return from updateFn (The function we provide as a second argument of useOptimistic hook). It will be the same as the state unless an action is pending, after action is performed, it will be equal to the value returned by updateFn.
+2. **addOptimistic**: addOptimistic is the dispatching function to call when you have an optimistic update. It takes one argument, optimisticValue, of any type and will call the updateFn with state and optimisticValue.
+
+## Recap
+
+1. **useFormStatus**: Provides the status of the last form submission, including whether the form is pending, the submitted data, method, and action.
+2. **useActionState**: Allows you to manage state based on the result of a form action, useful for updating UI immediately based on form submissions.
+3. **useOptimistic**: Enables optimistic updates to the UI, allowing you to show immediate feedback before an async action completes.
+
+If you enjoyed this content, don’t forget to share it with your peers and [join our squad](https://dly.to/Kao0W7X21gm) for more insights into the evolving world of web development. More exciting topics are coming your way!
+
+Happy coding!👾

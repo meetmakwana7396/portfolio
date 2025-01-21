@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import Image, { ImageProps } from "next/image";
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+import Image from "next/image";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import { TweetComponent } from "./tweet";
 import { CaptionComponent } from "./caption";
@@ -10,11 +10,6 @@ import { ImageGrid } from "./image-grid";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
-
-interface CustomLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string;
-}
 
 interface TableProps {
   data: {
@@ -28,14 +23,14 @@ interface CalloutProps {
   children: React.ReactNode;
 }
 
-interface CustomMDXProps extends MDXRemoteProps {
-  components?: Record<string, React.ComponentType<any>>;
-}
-
-function CustomLink(props: CustomLinkProps) {
+function CustomLink(props: any) {
   let href = props.href;
   if (href.startsWith("/")) {
-    return <Link {...props}>{props.children}</Link>;
+    return (
+      <Link href={href} {...props}>
+        {props.children}
+      </Link>
+    );
   }
   if (href.startsWith("#")) {
     return <a {...props} />;
@@ -43,17 +38,34 @@ function CustomLink(props: CustomLinkProps) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props: ImageProps) {
-  return <Image className="rounded-lg" {...props} alt={props.alt} />;
+function RoundedImage(props: any) {
+  return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
-interface CodeProps extends React.HTMLAttributes<HTMLElement> {
-  children: string;
-}
-
-function Code({ children, ...props }: CodeProps) {
+function Code({ children, ...props }: any) {
   let codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+}
+
+const InlineCode = ({ children }: any) => (
+  <code
+    style={{
+      backgroundColor: "#eee",
+      padding: "10px",
+      fontFamily: "monospace",
+    }}
+  >
+    {children}
+  </code>
+);
+
+function BlockQuote(props: React.HTMLAttributes<HTMLElement>) {
+  return (
+    <blockquote
+      className="rounded-xl border-l-teal-500 bg-teal-900/50 p-1 px-6 text-lg"
+      {...props}
+    />
+  );
 }
 
 function Table({ data }: TableProps) {
@@ -135,6 +147,7 @@ const components = {
   Image: RoundedImage,
   ImageGrid,
   a: CustomLink,
+  blockquote: BlockQuote,
   StaticTweet: TweetComponent,
   Caption: CaptionComponent,
   YouTube: YouTubeComponent,
@@ -144,7 +157,7 @@ const components = {
   Callout,
 };
 
-export function CustomMDX(props: CustomMDXProps) {
+export function CustomMDX(props: any) {
   return (
     <MDXRemote
       {...props}

@@ -95,6 +95,7 @@ export default async function SingleArticlePage({
           __html: data.publication.post.content.html,
         }}
       ></div>
+      <pre>{data.publication.post.content.markdown}</pre>
     </section>
   );
 }

@@ -87,15 +87,26 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <h1 className="title mb-3 text-2xl font-medium tracking-tight">
+      <h1 className="px-4 text-3xl font-extrabold leading-snug sm:px-0 sm:text-5xl">
         {post.metadata.title}
       </h1>
-      <div className="text-medium mb-8 mt-2 flex items-center justify-between">
+      <div className="text-medium mb-4 mt-2 flex items-center justify-between">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose-quoteless prose prose-neutral dark:prose-invert">
+      <div className="flex flex-wrap gap-2 px-4 mb-8 sm:px-0">
+        {post.metadata.tags.split(", ").map((tag, index) => (
+          <span
+            className="bg-neutral-600/50 px-2 py-1 text-xs sm:text-sm"
+            key={index}
+            style={{ borderRadius: "10px" }}
+          >
+            #{tag}
+          </span>
+        ))}
+      </div>
+      <article className="dark prose prose-invert">
         <CustomMDX source={post.content} />
       </article>
     </section>
